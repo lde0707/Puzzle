@@ -1,0 +1,12 @@
+Tool: built-in image_gen (transparent_background: true)
+Asset: Assets/Resources/GravityPuzzle/Brand/mallang-orbit-wordmark.png
+Date: 2026-10-25
+
+Use case: logo-brand.
+Asset type: production-ready transparent Korean wordmark for the title screen of a cozy mobile gravity puzzle game.
+Primary request: Draw the exact Korean game title "말랑궤도" as custom, very thick, squishy rounded lettering, a distinctive premium casual-game logo. Four Hangul syllable blocks, exactly 말 / 랑 / 궤 / 도 in this order, one horizontal line, no space. All components of 궤 must be correct and legible.
+Style: beautifully hand-shaped inflated marshmallow / soft clay lettering, softly rounded corners, chunky pillowy volume, tasteful satin highlights, gentle bevel, a thin deep blackberry-purple contour and compact lilac underside giving depth. Soft lavender main faces with warm cream highlights and subtle peach warmth, suited to a pastel lilac, apricot, and cream puzzle UI. Strong readable silhouette on a pale cream-lilac background at mobile size. The lettering itself is the hero.
+Composition: wide horizontal wordmark, approximately 3:1 canvas, letters large and closely but clearly spaced, fully visible, straight-on orthographic view, centered and tightly framed with a small safe transparent margin. Small soft four-point glints may accent the wordmark; keep them sparse and subordinate.
+Text (verbatim): "말랑궤도"
+Background: genuinely transparent alpha, no background plate, no white or colored rectangle, no checkerboard baked into pixels.
+Avoid: any English or romanization, subtitles, extra text, watermarks, mascots, faces, stars replacing Hangul strokes, hard angular type, thin strokes, metallic chrome, glossy plastic glare, dramatic perspective, excessive decoration. This is a single finished usable logo asset, not a mockup sheet.

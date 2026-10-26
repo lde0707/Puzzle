@@ -107,3 +107,31 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# The Unity project lives in a subdirectory of this repository.
+/Android Puzzle/[Ll]ibrary/
+/Android Puzzle/[Tt]emp/
+/Android Puzzle/[Oo]bj/
+/Android Puzzle/[Bb]uild/
+/Android Puzzle/[Bb]uilds/
+/Android Puzzle/[Ll]ogs/
+/Android Puzzle/[Uu]ser[Ss]ettings/
+/Android Puzzle/[Mm]emoryCaptures/
+/Android Puzzle/[Rr]ecordings/
+/Android Puzzle/UIElementsSchema/
+/Android Puzzle/.utmp/
+
+# Keep signing material out of source control.
+*.keystore
+*.jks
+
+# Apple signing credentials and Xcode user-local state.
+*.p12
+*.mobileprovision
+xcuserdata/
+*.xcuserstate
+*.ipa
+*.dSYM/
+
+# Python helper cache.
+/Tools/__pycache__/
