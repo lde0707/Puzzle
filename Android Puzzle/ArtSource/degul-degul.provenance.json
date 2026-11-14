@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-01",
+  "tool": "built-in image_gen",
+  "title": {
+    "ko": "데굴데굴",
+    "en": "Degul Degul"
+  },
+  "prompts": {
+    "ko": "Create a production-ready transparent PNG title wordmark for a cozy Korean 2D gravity puzzle game. Exact text only: '데굴데굴' (four Hangul syllables, 데 굴 데 굴, perfectly legible, one horizontal line). Wide approximately 3:1 canvas, tightly composed with 5% breathing room, entire lettering uncropped. Very chunky rounded hand-lettered Korean typography with soft slightly irregular edges and gently bouncing baseline. Matte, fluffy, hand-painted gouache / colored-pencil texture with fine paper-grain inside letters, pale cream and lilac lavender fills, restrained peach accents, muted deep-purple thin outline and a very shallow lavender offset shadow for modest volume. Fits a pastel cream/lavender casual game featuring square soft characters. Soft 2D illustrated finish, NOT shiny plastic, NOT glossy 3D, NO metallic highlights, NO chrome, NO glass, NO heavy bevels, NO photorealism. Only a couple of tiny flat yellow four-point sparkles beside lettering, no characters or background scenery. Transparent alpha background, no checkerboard drawn, no backdrop, no slogan, no English, no extra text, no watermark. The words must read exactly 데굴데굴.",
+    "en": "Use the reference as a STYLE REFERENCE ONLY. Create the matching English title wordmark for the same cozy 2D puzzle game. Exact text: 'Degul Degul' (capital D in each word, all other letters lowercase, one visible space, spell D-e-g-u-l D-e-g-u-l). One horizontal line on a wide approximately 3:1 transparent canvas, centered, complete uncropped lettering, modest 5% margin. Match the reference's hand-painted matte gouache / colored-pencil fluffy paper-grain texture, chunky rounded slightly bouncy lettering, alternating soft cream and pale lavender fills, muted purple thin outline, tiny shallow lavender offset shadow, restrained peach accents and two tiny flat yellow sparkles at the outer edges. Make the English very legible even as a small game subtitle. Soft modest 2D volume, no shiny plastic, no glossy 3D bevels, no highlights, no metallic effects, no background, no characters, no Hangul, no subtitle or other words. Genuine transparent alpha background, no drawn checkerboard. This is a standalone English wordmark, not an image containing both languages.",
+    "enRefinement": "Edit this English game wordmark with ONE change only: put a clearly visible, generous word space between 'Degul' and 'Degul', about half the width of a lowercase u, so it reads 'Degul Degul', not one joined word. Keep exact spelling, case, 2D matte paper/gouache fluffy texture, cream and lilac colors, rounded shapes, shallow purple shadow, tiny yellow side sparkles, and transparent alpha. Scale the complete lettering slightly smaller if necessary so both words and sparkles have clear padding and are not cropped. No new text or background. Retain wide 3:1 composition."
+  },
+  "files": {
+    "ko": "Assets/Resources/GravityPuzzle/Brand/degul-degul-wordmark-ko.png",
+    "en": "Assets/Resources/GravityPuzzle/Brand/degul-degul-wordmark-en.png"
+  },
+  "notes": [
+    "Original alpha PNG bytes copied without cropping or recompression.",
+    "Display branding updated; storage IDs, package IDs, hosting identity and public URL preserved.",
+    "Legacy image files archived outside Unity Assets. No web build or deployment performed."
+  ]
+}

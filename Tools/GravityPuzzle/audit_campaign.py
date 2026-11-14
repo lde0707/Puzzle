@@ -95,7 +95,7 @@ def audit_blink(level, number):
 
 def main():
     levels, hashes = [], {}
-    for filename in ('layouts.json', 'late_levels.json', 'resize_levels.json', 'blink_levels.json'):
+    for filename in ('layouts.json', 'late_levels.json', 'resize_levels.json', 'blink_levels.json', 'expansion_levels.json'):
         raw = (SOURCE / filename).read_bytes()
         hashes[filename] = hashlib.sha256(raw).hexdigest()
         for level in json.loads(raw.decode('utf-8-sig'))['layouts']:
@@ -105,11 +105,16 @@ def main():
             levels.append(level)
     # Exact stable sort used by PuzzleCampaign.Order in the Unity runtime.
     levels.sort(key=lambda l: (3 if l['blinkBlocks'] else 2 if l['resizers'] else 1 if l['portals'] else 0,
+                              int(l['room'][3:]) if l['room'].startswith('E') and len(l['room'])==5 and l['room'][2]=='_' else 0,
                               len(l['route']), len(l['cargo']),
                               max(c['size'] for c in l['cargo']), l['width'] * l['height']))
     results = [audit(level, i + 1) for i, level in enumerate(levels)]
-    drops = [dict(previous=a['stage'], stage=b['stage'], before=a['shortest'], after=b['shortest'])
-             for a, b in zip(results, results[1:]) if b['shortest'] < a['shortest']]
+    theme_counts = {}
+    for result in results:
+        theme=result['chapter'];theme_counts[theme]=theme_counts.get(theme,0)+1
+        result['themeStage']=theme_counts[theme]
+    drops = [dict(theme=b['chapter'],previous=a['themeStage'], stage=b['themeStage'], before=a['shortest'], after=b['shortest'])
+             for a, b in zip(results, results[1:]) if a['chapter']==b['chapter'] and b['shortest'] < a['shortest']]
     report = dict(timestamp=datetime.now(timezone.utc).isoformat(), sourceSHA256=hashes,
                   method='Exhaustive BFS through authored solution depth; fixed-size route oracle cross-check; blink searches include turn parity',
                   limitation='Initial-state solvability only. Human difficulty and recovery from every reachable state are not proven.',

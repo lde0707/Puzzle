@@ -9,6 +9,7 @@ namespace Puzzle.Editor
     public static partial class GravityPrototypeChecks
     {
         public static void ValidateStarsAndBuild(){Run();IphoneTestSetup.BuildGame();}
+        public static void ValidateStarsOnly(){TestStarAttempts();TestCollection();Debug.Log("PASS star allowance checks without web build");}
         private static void TestStarAttempts()
         {
             var level=new PuzzleDefinition{room="star-attempt",width=5,height=3,walls=new Cell[0],cargo=new[]{new CargoDefinition{x=0,y=1,gx=4,gy=1,size=1}},route=new[]{3}};
@@ -20,9 +21,13 @@ namespace Puzzle.Editor
             Check(s.Undo()&&s.Moves==0&&s.UsedUndo,"rewinding all moves does not erase undo usage");
             Move(3);Check(s.Solved&&Stars(s)==2,"actual minimal clear after undo earns two");
             s.Reset();Check(!s.UsedUndo&&s.Moves==0,"restart begins a fresh attempt");
-            Move(1);Move(3);Check(s.Solved&&Stars(s)==2,"actual longer clear without undo earns two");
+            Move(1);Move(1);Move(1);Move(3);Check(s.Solved&&Stars(s)==3,"actual minimum plus three clear without undo earns three");
             s.Reset();Move(1);Check(s.Undo(),"no-op move is undoable");Move(1);Move(3);
-            Check(s.Solved&&Stars(s)==1,"actual longer clear with undo earns one");
+            Check(s.Solved&&Stars(s)==2,"actual within-allowance clear with undo earns two");
+            s.Reset();Move(1);Move(1);Move(1);Move(1);Move(3);
+            Check(s.Solved&&Stars(s)==2,"actual minimum plus four without undo earns two");
+            s.Reset();Move(1);Check(s.Undo(),"undo marks attempt before longer clear");Move(1);Move(1);Move(1);Move(1);Move(3);
+            Check(s.Solved&&Stars(s)==1,"actual minimum plus four with undo earns one");
             s.Reset();Move(1);s.SetPause(PauseReason.Menu,true);Check(!s.Undo()&&!s.UsedUndo&&s.Moves==1,"rejected paused undo is not usage");s.SetPause(PauseReason.Menu,false);s.Reset();
             s.Command(3);Check(s.Moving&&s.Undo()&&s.UsedUndo&&!s.Moving,"cancelling an in-flight move counts as undo");
 

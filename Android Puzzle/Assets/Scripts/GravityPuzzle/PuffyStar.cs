@@ -4,9 +4,14 @@ using UnityEngine.UI;
 namespace Puzzle.Gravity
 {
     // Rounded vector outline, a thick underside and a softly lit domed face.
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class PuffyStar : MaskableGraphic
     {
         public bool earned = true;
+        public bool painted;
+        private static Texture2D rewardArt;
+        private static Texture2D RewardArt=>rewardArt?rewardArt:(rewardArt=BrandArt.Load("GravityPuzzle/Brand/mochi-reward-star"));
+        public override Texture mainTexture=>painted&&earned&&RewardArt?RewardArt:base.mainTexture;
         private static readonly Vector2[] Outline = MakeOutline();
         private static Vector2[] MakeOutline()
         {
@@ -31,6 +36,14 @@ namespace Puzzle.Gravity
         protected override void OnPopulateMesh(VertexHelper vh)
         {
             vh.Clear(); var rect = rectTransform.rect;
+            if(painted&&earned&&RewardArt)
+            {
+                vh.AddVert(new Vector3(rect.xMin,rect.yMin),color,new Vector2(0,0));
+                vh.AddVert(new Vector3(rect.xMin,rect.yMax),color,new Vector2(0,1));
+                vh.AddVert(new Vector3(rect.xMax,rect.yMax),color,new Vector2(1,1));
+                vh.AddVert(new Vector3(rect.xMax,rect.yMin),color,new Vector2(1,0));
+                vh.AddTriangle(0,1,2);vh.AddTriangle(2,3,0);return;
+            }
             Vector2 center = new Vector2(.5f, .52f);
             void Vertex(Vector2 p, Color c) => vh.AddVert(new Vector3(rect.xMin + p.x * rect.width, rect.yMin + p.y * rect.height), c, Vector2.zero);
             void Tri(Vector2 a, Vector2 b, Vector2 c, Color ca, Color cb, Color cc)

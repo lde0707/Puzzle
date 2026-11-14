@@ -1,0 +1,5 @@
+<!doctype html><meta charset="utf-8"><title>itch.io iframe 검증</title>
+<style>body{margin:0;background:#eee8f5;font:15px system-ui}nav{padding:8px;display:flex;gap:8px}button{padding:8px}iframe{display:block;border:0;margin:0 auto;width:480px;height:820px;max-width:100vw}body.cover nav{display:none}body.cover iframe{margin:0;width:630px;height:500px;max-width:none}</style>
+<nav><button onclick="size(480,820)">480 × 820</button><button onclick="size(390,844)">390 × 844</button><button onclick="size(320,640)">320 × 640</button><button onclick="size(960,600)">960 × 600</button></nav>
+<iframe id="game" src="../web/index.html" title="데굴데굴 itch.io 테스트" allow="autoplay; fullscreen" allowfullscreen sandbox="allow-scripts allow-same-origin allow-downloads allow-pointer-lock allow-forms"></iframe>
+<script>function size(w,h){game.style.width=w+'px';game.style.height=h+'px'}if(location.search==='?cover'){document.body.className='cover'}</script>

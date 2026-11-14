@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -15,17 +15,30 @@ namespace Puzzle.Gravity
         public string[] seenLessons = new string[0];
         public bool reduceMotion, largeText;
         public bool usedUndo;
+        public bool usedHint,hintAudit;
         public bool sound = true;
+        public bool musicMuted; // Missing in old saves means the new quiet music is enabled.
         public PuzzleCollection collection;
+        public PuzzleHints hints;
+        public HintWallet hintWallet;
+        public PuzzleActivity activity;
+        public bool portalHelpSeen;
     }
     [Serializable] public sealed class SaveEnvelope { public int version=1, sequence; public string payload, checksum; }
     public sealed class ProgressSaveService
     {
+#if UNITY_EDITOR
+        // Editor screenshots and smoke tests must never write to a player's save.
+        public static string PreviewDirectory;
+#endif
         // Storage IDs are intentionally stable across display-name changes.
         public static string DefaultDirectory
         {
             get
             {
+#if UNITY_EDITOR
+                if(!string.IsNullOrEmpty(PreviewDirectory))return PreviewDirectory;
+#endif
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
                 return StorageDirectory(Application.persistentDataPath,true);
 #else
@@ -58,7 +71,7 @@ namespace Puzzle.Gravity
                 var old=new LegacyResizeLevel{room=level.room,displayName=level.displayName,lesson=level.lesson,portals=level.portals,resizers=level.resizers,family=level.family,width=level.width,height=level.height,walls=level.walls,cargo=level.cargo,route=level.route};
                 return Checksum("resize-v1|"+JsonUtility.ToJson(old));
             }
-            if(!level.HasPortals)return originalVersion;
+            if(!level.HasPortals)return level.room=="3C"?Checksum("corner-v2|"+JsonUtility.ToJson(level)):originalVersion;
             var legacy=new LegacyLevel{room=level.room,displayName=level.displayName,lesson=level.lesson,portals=level.portals,family=level.family,width=level.width,height=level.height,walls=level.walls,route=level.route,
                 cargo=level.cargo.Select(c=>new LegacyCargo{x=c.x,y=c.y,size=c.size,gx=c.gx,gy=c.gy}).ToArray()};
             return Checksum("face-portal-v2|"+JsonUtility.ToJson(legacy));
@@ -75,6 +88,16 @@ namespace Puzzle.Gravity
         }
         public ProgressData Load()
         {
+            if(CrazyPortal.Enabled)
+            {
+                string raw=CrazyPortal.Read("degul.progress.v1");
+                if(string.IsNullOrEmpty(raw)){sequence=0;return null;}
+                var e=JsonUtility.FromJson<SaveEnvelope>(raw);
+                if(e==null||e.version!=1||string.IsNullOrEmpty(e.payload)||Checksum(e.payload)!=e.checksum)
+                    throw new InvalidDataException("CrazyGames progress failed validation; refusing to overwrite it.");
+                sequence=e.sequence;
+                return JsonUtility.FromJson<ProgressData>(e.payload);
+            }
             ProgressData latest=null; sequence=0;
             for(int slot=0;slot<2;slot++)
             {
@@ -96,10 +119,15 @@ namespace Puzzle.Gravity
         {
             try
             {
-                Directory.CreateDirectory(directory);
                 string payload=JsonUtility.ToJson(data);
                 int next=sequence+1;
                 var envelope=new SaveEnvelope { sequence=next, payload=payload, checksum=Checksum(payload) };
+                if(CrazyPortal.Enabled)
+                {
+                    CrazyPortal.Write("degul.progress.v1",JsonUtility.ToJson(envelope));
+                    sequence=next;LastError=null;return true;
+                }
+                Directory.CreateDirectory(directory);
                 string path=Path.Combine(directory,"gravity-progress-"+(next%2)+".json");
                 string temporary=path+".tmp";
                 File.WriteAllText(temporary,JsonUtility.ToJson(envelope));

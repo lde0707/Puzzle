@@ -145,9 +145,39 @@ namespace Puzzle.Gravity
     }
     public static class PuzzleCampaign
     {
-        // Stable sorting preserves authored order for equally ranked puzzles; IDs remain unchanged.
+        public static int Theme(PuzzleDefinition level)=>level.HasBlinkBlocks?3:level.HasResizers?2:level.HasPortals?1:0;
+        public static string ThemeName(int theme)=>new[]{"기본 중력","별문 여행","크기 변환","숨바꼭질"}[theme];
+        // Extension IDs are distinct from all legacy IDs. Do not add serialized metadata
+        // to PuzzleDefinition: existing saves hash its JSON for version compatibility.
+        public static int ExtensionNumber(PuzzleDefinition level)=>level.room!=null&&level.room.StartsWith("E")&&level.room.Length==5&&level.room[2]=='_'&&int.TryParse(level.room.Substring(3),out int n)?n:0;
+        public static int StageNumber(PuzzleDefinition[] levels,int index)=>levels.Take(index+1).Count(l=>Theme(l)==Theme(levels[index]));
+        public static int ThemeCount(PuzzleDefinition[] levels,int theme)=>levels.Count(l=>Theme(l)==theme);
+        public static int NextInTheme(PuzzleDefinition[] levels,int index)=>index+1<levels.Length&&Theme(levels[index+1])==Theme(levels[index])?index+1:-1;
+        public static bool IsUnlocked(PuzzleDefinition[] levels,int index,Func<string,bool> cleared)
+        {
+            if(index<0||index>=levels.Length)return false;
+            int theme=Theme(levels[index]);
+            for(int i=0;i<index;i++)if(Theme(levels[i])==theme&&!cleared(levels[i].room))return false;
+            return true;
+        }
+        public static int FirstUncleared(PuzzleDefinition[] levels,int theme,Func<string,bool> cleared)
+        {
+            int first=Array.FindIndex(levels,l=>Theme(l)==theme);
+            for(int i=0;i<levels.Length;i++)if(Theme(levels[i])==theme&&!cleared(levels[i].room))return i;
+            return Math.Max(0,first);
+        }
+        public static int ResumeIndex(PuzzleDefinition[] levels,string room)
+        {
+            int index=Array.FindIndex(levels,l=>l.room==room);
+            if(index>=0)return index;
+            // Older portal prototypes used P/S IDs; expansions must not move their fallback into the basic theme.
+            return room!=null&&(room.StartsWith("P")||room.StartsWith("S"))?Math.Max(0,Array.FindIndex(levels,l=>Theme(l)==1)):0;
+        }
+        public static string StageLabel(PuzzleDefinition[] levels,int index)=>ThemeName(Theme(levels[index]))+" · "+StageNumber(levels,index)+"단계";
+        // Legacy ordering stays intact inside each theme. Extensions append independently.
         public static PuzzleDefinition[] Order(IEnumerable<PuzzleDefinition> source)=>source
-            .OrderBy(level=>level.HasBlinkBlocks?3:level.HasResizers?2:level.HasPortals?1:0)
+            .OrderBy(Theme)
+            .ThenBy(ExtensionNumber)
             .ThenBy(level=>level.route.Length)
             .ThenBy(level=>level.cargo.Length)
             .ThenBy(level=>level.cargo.Max(c=>c.size))

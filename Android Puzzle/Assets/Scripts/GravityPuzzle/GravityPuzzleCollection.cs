@@ -14,6 +14,7 @@ namespace Puzzle.Gravity
         private Text drawCaption,drawNotice,skinConcept;
         private int earnedStars,previewSkin;
         private float collectionTime;
+        private DrawStageArt collectionArt;
         private bool showCatalogue=true;
         private PuzzleTap[] galleryTiles;
         private Text[] galleryStatuses;
@@ -21,8 +22,9 @@ namespace Puzzle.Gravity
         private static string StarText(int count)=>new string('★',count)+new string('☆',3-count);
         private void RecordClear()
         {
+            activity.For(session.Level.room).clears++;
             completed.Add(session.Level.room);
-            earnedStars=collection.Award(session.Level.room,session.Moves,session.Level.route.Length,session.UsedUndo);
+            earnedStars=collection.Award(session.Level.room,session.Moves,session.Level.route.Length,session.UsedUndo,usedHint||!runAudit);
             // Persist the award immediately; only its visible counter waits for the flight.
             pendingWalletStars=earnedStars;RefreshWallet();
             Save();
@@ -31,14 +33,16 @@ namespace Puzzle.Gravity
         {
             session.SetPause(PauseReason.Menu,true);
             var card=OpenDialog("skins",750);
+            MochiDrawFrame(card);
             collectionTime=0;if(!preserveSelection)previewSkin=collection.selected;
             float width=card.sizeDelta.x;
             DialogText(card,"말랑 옷장",698,38,28);
             DialogText(card,"별을 모아, 우리만의 새로운 모습",671,24,13,PuzzleUI.Muted);
             DialogText(card,"★  "+collection.wallet+"   ·   수집 "+collection.owned.Length+" / "+PuzzleCollection.Names.Length,638,30,17);
-            var machine=PuzzleUI.Panel("Starlight capsule",card,new Color(.83f,.73f,.94f));PuzzleUI.Box(machine.rectTransform,22,449,width-44,184);
-            var inner=PuzzleUI.Panel("Capsule window",machine.transform,new Color(.98f,.96f,1));PuzzleUI.Fill(inner.rectTransform,5);
-            var orbit=PuzzleUI.Glyph(machine.transform,GlyphKind.Ring,new Color(.75f,.63f,.91f,.5f));PuzzleUI.Box(orbit.rectTransform,20,36,width-84,108);
+            var machine=PuzzleUI.Panel("Starlight capsule",card,new Color(.85f,.76f,.97f,.45f));PuzzleUI.Box(machine.rectTransform,22,449,width-44,184);
+            var inner=PuzzleUI.Panel("Capsule window",machine.transform,new Color(1,.97f,.99f,.68f));PuzzleUI.Fill(inner.rectTransform,4);
+            var art=PuzzleUI.Rect("Wardrobe candy stage",machine.transform);PuzzleUI.Box(art,7,45,width-58,104);
+            collectionArt=art.gameObject.AddComponent<DrawStageArt>();collectionArt.preview=true;collectionArt.raycastTarget=false;
             skinConcept=PuzzleUI.Label("Skin concept",machine.transform,SkinDecoration.Concepts[previewSkin],12,PuzzleUI.Muted);PuzzleUI.Box(skinConcept.rectTransform,8,151,width-60,28);
             for(int i=0;i<3;i++)
             {
@@ -48,10 +52,15 @@ namespace Puzzle.Gravity
             drawCaption=PuzzleUI.Label("Preview skin name",machine.transform,PuzzleCollection.Names[previewSkin]+" · 착용 중",17,PuzzleUI.Ink);
             drawCaption.fontStyle=FontStyle.Bold;PuzzleUI.Box(drawCaption.rectTransform,8,12,width-60,32);
             var draw=MakeButton(card,"Draw skin","",null,()=>Active&&modal=="skins"&&collection.wallet>=PuzzleCollection.DrawCost&&collection.Remaining>0,DrawSkin,new Color(1,.86f,.61f));
-            PuzzleUI.Box((RectTransform)draw.transform,24,392,width-48,48);
-            var drawLabel=PuzzleUI.Label("Draw cost",draw.transform,collection.Remaining==0?PuzzleCollection.Names.Length+"종 모두 모았어요!":collection.wallet<PuzzleCollection.DrawCost?"★ "+(PuzzleCollection.DrawCost-collection.wallet)+"개 더 모으면 뽑을 수 있어요":"★ 3개로 새로운 스킨 뽑기",16,PuzzleUI.Ink);
-            drawLabel.fontStyle=FontStyle.Bold;PuzzleUI.Fill(drawLabel.rectTransform,4);
-            drawNotice=PuzzleUI.Label("Draw rules",card,notice??"중복 없이 · 미보유 스킨마다 같은 확률\n단계별 최고 평가를 올린 만큼 별을 받아요",11,PuzzleUI.Muted);PuzzleUI.Box(drawNotice.rectTransform,20,347,width-40,40);
+            float drawWidth=(width-58)/2;
+            PuzzleUI.Box((RectTransform)draw.transform,24,387,drawWidth,53);
+            var drawLabel=PuzzleUI.Label("Draw cost",draw.transform,collection.Remaining==0?"모두 모았어요!":"1개 뽑기\n별 3개",14,PuzzleUI.Ink);
+            drawLabel.fontStyle=FontStyle.Bold;PuzzleUI.Fill(drawLabel.rectTransform,3);
+            var batch=MakeButton(card,"Draw ten skins","10개 연속 뽑기\n별 30개",null,()=>Active&&modal=="skins"&&collection.wallet>=PuzzleCollection.BatchDrawCost&&collection.Remaining>=PuzzleCollection.BatchDrawCount,DrawTenSkins,new Color(.85f,.77f,1));
+            PuzzleUI.Box((RectTransform)batch.transform,width/2+5,387,drawWidth,53);
+            foreach(var label in batch.GetComponentsInChildren<Text>())label.fontSize=14;
+            string rule=collection.Remaining==0?"모든 친구를 만났어요!":collection.Remaining<10?"새 친구가 "+collection.Remaining+"종 남았어요 · 1개씩 뽑아 주세요":collection.wallet<30?"10연속은 별 "+(30-collection.wallet)+"개를 더 모으면 열려요":"캡슐 한 번에, 새 친구 열 명을 만나요";
+            drawNotice=PuzzleUI.Label("Draw rules",card,notice??"중복 없이 · 미보유 스킨마다 같은 확률\n"+rule,11,PuzzleUI.Muted);PuzzleUI.Box(drawNotice.rectTransform,20,347,width-40,36);
             var heading=PuzzleUI.Label("Owned heading",card,showCatalogue?"스킨 도감 · "+PuzzleCollection.Names.Length+"종":"보유 스킨 · 선택하기",13,PuzzleUI.Ink,TextAnchor.MiddleLeft);heading.fontStyle=FontStyle.Bold;PuzzleUI.Box(heading.rectTransform,24,316,width-145,26);
             var toggle=MakeButton(card,"Collection filter",showCatalogue?"보유만 보기":PuzzleCollection.Names.Length+"종 보기",null,()=>Active&&modal=="skins",()=>{showCatalogue=!showCatalogue;OpenCollection(null,true);},PuzzleUI.Mint);PuzzleUI.Box((RectTransform)toggle.transform,width-116,316,92,27);
             var viewport=PuzzleUI.Panel("Owned skins viewport",card,new Color(1,1,1,0),false);viewport.raycastTarget=true;PuzzleUI.Box(viewport.rectTransform,22,80,width-44,228);viewport.gameObject.AddComponent<RectMask2D>();
@@ -92,6 +101,13 @@ namespace Puzzle.Gravity
             {drawNotice.text="저장하지 못해 별을 사용하지 않았어요.\n저장 공간을 확인한 뒤 다시 시도해 주세요.";return;}
             OpenSkinDraw(skin);
         }
+        private void DrawTenSkins()
+        {
+            if(!Active||modal!="skins"||collection.wallet<PuzzleCollection.BatchDrawCost||collection.Remaining<PuzzleCollection.BatchDrawCount)return;
+            if(!collection.TryDrawMany(PuzzleCollection.BatchDrawCount,count=>Random.Range(0,count),Save,out var skins))
+            {drawNotice.text="저장하지 못해 별을 사용하지 않았어요.\n저장 공간을 확인한 뒤 다시 시도해 주세요.";return;}
+            OpenSkinBatch(skins);
+        }
         private void SelectSkin(int id)
         {
             if(!collection.owned.Contains(id))return;
@@ -124,6 +140,7 @@ namespace Puzzle.Gravity
             if(modal=="skin-draw"){TickSkinDraw(delta);return;}
             if(modal!="skins")return;
             if(!reduceMotion)collectionTime+=delta;
+            if(collectionArt)collectionArt.Pose(collectionTime,reduceMotion);
             for(int i=0;i<3;i++)if(drawSkins[i])
             {
                 drawSkins[i].Pose(collectionTime,reduceMotion);

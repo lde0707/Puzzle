@@ -10,7 +10,8 @@ namespace Puzzle.Gravity
         private readonly VertexHelper mesh;
         private readonly Rect rect;
         private readonly bool polished;
-        public SkinMesh(VertexHelper mesh,Rect rect,bool polished=false){this.mesh=mesh;this.rect=rect;this.polished=polished;}
+        private readonly int ovalSegments;
+        public SkinMesh(VertexHelper mesh,Rect rect,bool polished=false,int ovalSegments=40){this.mesh=mesh;this.rect=rect;this.polished=polished;this.ovalSegments=Mathf.Clamp(ovalSegments,12,64);}
         [MethodImpl(MethodImplOptions.NoInlining)]
         public void Triangle(Vector2 a,Vector2 b,Vector2 c,Color color)
         {
@@ -55,9 +56,9 @@ namespace Puzzle.Gravity
                 var outline=new Vector2[48];for(int i=0;i<48;i++){float a=i*Mathf.PI/24;outline[i]=new Vector2(x+rx*Mathf.Cos(a),y+ry*Mathf.Sin(a));}
                 Cushion(new Vector2(x,y),outline,color);return;
             }
-            for(int i=0;i<40;i++)
+            for(int i=0;i<ovalSegments;i++)
             {
-                float a=i*Mathf.PI/20,b=(i+1)*Mathf.PI/20;
+                float a=i*Mathf.PI*2/ovalSegments,b=(i+1)*Mathf.PI*2/ovalSegments;
                 Triangle(new Vector2(x,y),new Vector2(x+rx*Mathf.Cos(a),y+ry*Mathf.Sin(a)),new Vector2(x+rx*Mathf.Cos(b),y+ry*Mathf.Sin(b)),color);
             }
         }

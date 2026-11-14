@@ -22,8 +22,13 @@ namespace Puzzle.Editor
             {
                 Check(PuzzleCollection.Rating(optimum,optimum,false)==3,"minimum moves without undo earns three stars");
                 Check(PuzzleCollection.Rating(optimum,optimum,true)==2,"minimum moves with undo earns two stars");
-                Check(PuzzleCollection.Rating(optimum+1,optimum,false)==2&&PuzzleCollection.Rating(optimum+50,optimum,false)==2,"only no-undo condition earns two stars regardless of extra moves");
-                Check(PuzzleCollection.Rating(optimum+1,optimum,true)==1,"missing both conditions earns one star");
+                for(int extra=1;extra<=3;extra++)
+                {
+                    Check(PuzzleCollection.Rating(optimum+extra,optimum,false)==3,"up to three extra moves without undo earns three stars");
+                    Check(PuzzleCollection.Rating(optimum+extra,optimum,true)==2,"within allowance with undo earns two stars");
+                }
+                Check(PuzzleCollection.Rating(optimum+4,optimum,false)==2&&PuzzleCollection.Rating(optimum+50,optimum,false)==2,"outside allowance without undo earns two stars");
+                Check(PuzzleCollection.Rating(optimum+4,optimum,true)==1,"outside allowance with undo earns one star");
             }
             var c=PuzzleCollection.Restore(null,new[]{"a","b","a","removed"},new[]{"a","b","c"});
             Check(c.wallet==2&&c.records.Length==2&&c.Stars("a")==1&&c.owned.SequenceEqual(new[]{0}),"legacy clears migrate once without inventing move records");

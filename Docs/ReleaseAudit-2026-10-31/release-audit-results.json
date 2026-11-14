@@ -1,0 +1,101 @@
+{
+    "date": "2026-10-31T04:23:49.4379258Z",
+    "results": [
+        {
+            "name": "GravityPrototypeChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 6.0895421
+        },
+        {
+            "name": "HintChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 1.4837027
+        },
+        {
+            "name": "BatchDrawChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 2.3399038
+        },
+        {
+            "name": "ClearFinaleChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.036637699999999998
+        },
+        {
+            "name": "WalletFlightChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.0050593999999999999
+        },
+        {
+            "name": "DrawPresentationChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.9747621
+        },
+        {
+            "name": "MochiClearChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 1.5489693999999999
+        },
+        {
+            "name": "MochiEffectChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 7.8728595
+        },
+        {
+            "name": "SkinEffectChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 6.1830552999999999
+        },
+        {
+            "name": "StageDetailPresentationChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.31655849999999999
+        },
+        {
+            "name": "AmbienceChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.059107999999999997
+        },
+        {
+            "name": "CommunityChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.0078288
+        },
+        {
+            "name": "DrawingUndoChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.0942122
+        },
+        {
+            "name": "ProgressTransferChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.0048261
+        },
+        {
+            "name": "LifetimeStarsChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.0020136999999999999
+        },
+        {
+            "name": "StageDetailChecks",
+            "passed": true,
+            "error": "",
+            "seconds": 0.0028794999999999998
+        }
+    ]
+}

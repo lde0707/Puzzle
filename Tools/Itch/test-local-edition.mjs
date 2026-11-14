@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const sent=[],timers=[];
+const element=()=>({hidden:true,style:{},children:[],setAttribute(){},append(x){this.children.push(x);},addEventListener(){},focus(){},replaceChildren(){this.children=[];},querySelector(){return {focus(){}};}});
+const context={window:{},document:{createElement:element,body:element(),head:element()},setTimeout:fn=>timers.push(fn)};
+context.window.degulLanguage='ko';
+vm.runInNewContext(fs.readFileSync(new URL('./localized.js',import.meta.url),'utf8'),context);
+// Any attempted remote request or identifier storage fails this privacy test.
+context.fetch=()=>{throw Error('unexpected network');};
+Object.defineProperty(context,'localStorage',{get(){throw Error('unexpected identity storage');}});
+vm.runInNewContext(fs.readFileSync(new URL('./community.js',import.meta.url),'utf8'),context);
+const bridge=context.window.mallangCommunity;
+assert.equal(bridge.hasConsent(),false);
+bridge.ready('Game');assert.equal(timers.length,1);
+context.window.unityInstance={SendMessage:(...args)=>sent.push(args)};
+timers.shift()();bridge.snapshot('must not be sent');bridge.tiers('Game');bridge.open();
+assert.deepEqual(sent,[['Game','SetCommunityConsent','denied'],['Game','ReceiveStageTiers','{"rows":[]}']]);
+const panel=context.document.body.children[0];assert.equal(panel.hidden,false);
+assert(panel.children.some(e=>e.textContent?.includes('온라인 랭킹 없이')));
+panel.children.find(e=>e.textContent==='기록 옮기기 · 저장 파일').onclick();
+assert.equal(panel.hidden,true);
+assert.deepEqual(sent.slice(-2),[['Game','OpenHomeSettings'],['Game','OpenBackup']]);
+console.log('PASS itch local edition: denies telemetry, no identity storage/network, empty online tiers, working information panel.');

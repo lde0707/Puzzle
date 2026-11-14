@@ -126,6 +126,9 @@ namespace Puzzle.Editor
             if (scenes.Length == 0 || scenes.Any(s => !File.Exists(s)))
                 throw new BuildFailedException("No valid scenes. Run Prepare Test Environment first.");
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
+            PlayerSettings.SetIl2CppCodeGeneration(NamedBuildTarget.WebGL,Il2CppCodeGeneration.OptimizeSize);
+            UnityEditor.WebGL.UserBuildSettings.codeOptimization=UnityEditor.WebGL.WasmCodeOptimization.DiskSize;
+            using var packedBrand=new PackedBrandBuild();
             var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
             {
                 scenes = scenes,

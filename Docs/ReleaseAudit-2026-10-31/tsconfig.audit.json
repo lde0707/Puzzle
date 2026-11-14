@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx",
+    "strict": true, "noEmit": true, "skipLibCheck": true,
+    "baseUrl": ".",
+    "typeRoots": ["../../Sites/mallang-orbit/node_modules/@types"],
+    "paths": {
+      "cursor/canvas": ["C:/Users/doun0/.cursor/skills-cursor/canvas/sdk/index.d.ts"],
+      "react": ["../../Sites/mallang-orbit/node_modules/@types/react/index.d.ts"],
+      "react/jsx-runtime": ["../../Sites/mallang-orbit/node_modules/@types/react/jsx-runtime.d.ts"]
+    }
+  },
+  "files": ["mallang-release-audit.canvas.tsx"]
+}

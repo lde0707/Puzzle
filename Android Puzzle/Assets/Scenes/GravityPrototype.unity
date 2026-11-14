@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 992808036}
   - component: {fileID: 992808035}
   m_Layer: 0
-  m_Name: 말랑궤도
+  m_Name: 데굴데굴
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

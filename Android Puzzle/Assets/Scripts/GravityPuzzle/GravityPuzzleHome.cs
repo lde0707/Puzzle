@@ -16,6 +16,7 @@ namespace Puzzle.Gravity
 
         private void OpenHome()
         {
+            if(QuickPlay){OpenQuickPause();return;}
             CloseDialog();DismissHome();CancelTouches();
             session.SetPause(PauseReason.Menu,true);
             session.SetPause(PauseReason.Levels,false);
@@ -27,24 +28,30 @@ namespace Puzzle.Gravity
             homeContent.anchorMin=homeContent.anchorMax=new Vector2(.5f,.5f);
             homeContent.pivot=new Vector2(.5f,.5f);homeContent.sizeDelta=new Vector2(390,760);
             var settings=MakeButton(homeContent,"설정","설정",null,()=>Active&&modal=="home",OpenHomeSettings,new Color(.93f,.90f,.97f));
-            PuzzleUI.Box((RectTransform)settings.transform,302,718,64,38);
+            PuzzleUI.Box((RectTransform)settings.transform,278,718,88,38);
+            var ranking=MakeButton(homeContent,"Ranking","랭킹 · 기록",null,()=>Active&&modal=="home",OpenCommunity,PuzzleUI.Mint);
+            PuzzleUI.Box((RectTransform)ranking.transform,24,718,104,38);
 
             var outer=PuzzleUI.Glyph(homeContent,GlyphKind.Ring,new Color(.78f,.71f,.90f,.28f));
             PuzzleUI.Box(outer.rectTransform,-68,278,526,372);
             var inner=PuzzleUI.Glyph(homeContent,GlyphKind.Ring,new Color(.78f,.71f,.90f,.20f));
             PuzzleUI.Box(inner.rectTransform,40,324,310,192);
-            HomeText("작은 우주에 모인 우리",691,28,14,PuzzleUI.Muted);
             var signature=PuzzleUI.Panel("Signature badge",homeContent,new Color(.92f,.86f,.98f));PuzzleUI.Box(signature.rectTransform,109,297,172,27);
             var signatureText=PuzzleUI.Label("Signature badge text",signature.transform,"손끝에서 만나는 말랑한 우주",11,PuzzleUI.Ink);PuzzleUI.Fill(signatureText.rectTransform);
-            var logo=PuzzleUI.Rect("말랑궤도 title logo",homeContent).gameObject.AddComponent<RawImage>();
+            var logo=PuzzleUI.Rect("데굴데굴 title logo",homeContent).gameObject.AddComponent<RawImage>();
             logo.texture=brand.texture;logo.raycastTarget=false;
-            PuzzleUI.Box(logo.rectTransform,20,572,350,350f*logo.texture.height/logo.texture.width);
+            PuzzleUI.Box(logo.rectTransform,25,590,340,340f*logo.texture.height/logo.texture.width);
             homeLogo=logo.rectTransform;
             homeLogo.pivot=new Vector2(.5f,.5f);
-            homeLogoOrigin=new Vector2(195,572+homeLogo.sizeDelta.y/2);
+            homeLogoOrigin=new Vector2(195,590+homeLogo.sizeDelta.y/2);
             homeLogo.anchoredPosition=homeLogoOrigin;
-            // Light the three glints already painted into the wordmark, in its own coordinates.
-            Vector2[] glintAnchors={new Vector2(.038f,.53f),new Vector2(.513f,.875f),new Vector2(.974f,.51f)};
+            var english=PuzzleUI.Rect("Degul Degul English title",homeLogo).gameObject.AddComponent<RawImage>();
+            english.texture=BrandArt.Load("GravityPuzzle/Brand/degul-degul-wordmark-en");english.raycastTarget=false;
+            english.rectTransform.anchorMin=english.rectTransform.anchorMax=new Vector2(.5f,0);
+            english.rectTransform.pivot=new Vector2(.5f,1);english.rectTransform.anchoredPosition=new Vector2(0,-2);
+            english.rectTransform.sizeDelta=new Vector2(150,150f*english.texture.height/english.texture.width);
+            // Both language wordmarks breathe together; glints remain quiet and outside the letters.
+            Vector2[] glintAnchors={new Vector2(.027f,.45f),new Vector2(.50f,.96f),new Vector2(.975f,.40f)};
             for(int i=0;i<titleGlints.Length;i++)
             {
                 var glint=PuzzleUI.Rect("Title soft glint "+i,homeLogo);
@@ -54,7 +61,7 @@ namespace Puzzle.Gravity
                 titleGlints[i]=glint;
                 titleGlintOpacity[i]=glint.gameObject.AddComponent<CanvasGroup>();titleGlintOpacity[i].blocksRaycasts=false;
             }
-            HomeText("중력을 돌려, 우리 모두 제자리로",535,30,16,PuzzleUI.Ink);
+            HomeText("중력을 돌려, 우리 모두 제자리로",510,25,16,PuzzleUI.Ink);
 
             float[] xs={40,135,259},ys={363,389,354},sizes={98,121,90};
             for(int i=0;i<3;i++)
@@ -71,9 +78,9 @@ namespace Puzzle.Gravity
             HomeButton("게임 시작",211,StartFromHome,PuzzleUI.Accent);
             HomeButton("단계 선택",138,OpenLevels,PuzzleUI.Mint);
             HomeButton("스킨 뽑기  ·  ★ "+collection.wallet,65,()=>OpenCollection(),new Color(1,.89f,.67f));
-            int next=session.Solved?Mathf.Min(levelIndex+1,levels.Length-1):levelIndex;
-            HomeText((next+1)+"단계"+(session.Moves>0&&!session.Solved?"에서 이어서 출발해요":"로 출발해요"),25,25,12,PuzzleUI.Muted);
-            LayoutHome();TickHome(0);Save();
+            int next=session.Solved?PuzzleCampaign.NextInTheme(levels,levelIndex):levelIndex;
+            HomeText(next<0?"테마 완주! 다음 여행을 골라 주세요":PuzzleCampaign.StageLabel(levels,next)+(session.Moves>0&&!session.Solved?" 이어서 하기":" 출발해요"),25,25,12,PuzzleUI.Muted);
+            RefreshBrandLanguage();LayoutHome();TickHome(0);Save();
         }
 
         private void HomeText(string value,float y,float height,int size,Color color)
@@ -83,19 +90,29 @@ namespace Puzzle.Gravity
         }
         private void OpenHomeSettings()
         {
-            session.SetPause(PauseReason.Menu,true);
-            var card=OpenDialog("home-settings",390);
-            DialogText(card,"설정",318,42,27);
-            DialogText(card,"나에게 편한 속도로, 말랑하게",278,28,14,PuzzleUI.Muted);
-            DialogButton(card,"효과음  "+(sound?"켜짐":"꺼짐"),212,()=>{ToggleSound();OpenHomeSettings();},new Color(.98f,.88f,.82f));
-            DialogButton(card,"빠른 진행  "+(reduceMotion?"켜짐":"꺼짐"),150,()=>{ToggleFastPlay();OpenHomeSettings();});
-            DialogText(card,"빠른 진행을 켜면 이동·전환 연출을 생략해요.\n장식 움직임도 멈추고, 설정은 자동 저장돼요.",88,48,13,PuzzleUI.Muted);
-            DialogButton(card,"돌아가기",24,CloseHomeSettings,new Color(.93f,.90f,.97f));
-            LayoutDialog();
+            settingsFromHome=home!=null;ShowSettings(0);
         }
         private void CloseHomeSettings()
         {
-            CloseDialog();modal="home";
+            if(settingsFromHome){CloseDialog();modal="home";}else OpenPause();
+        }
+        public void SetCommunityConsent(string value)
+        {
+            CommunityBridge.ConsentGranted=value=="granted";
+            if(CommunityBridge.ConsentGranted&&session!=null)Save();
+        }
+        private void OpenCommunity()
+        {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            CommunityBridge.Sync(activity,collection);
+            CommunityBridge.Open();
+#else
+            var card=OpenDialog("home-settings",260);
+            DialogText(card,"나의 누적 기록",190,40,24);
+            DialogText(card,"이동 "+activity.TotalMoves+"회 · 초기화 "+activity.TotalRestarts+"회",138,34,15);
+            DialogText(card,"온라인 랭킹 참여는 공개 웹 버전에서 가능해요.",91,32,12,PuzzleUI.Muted);
+            DialogButton(card,"돌아가기",24,CloseHomeSettings);LayoutDialog();
+#endif
         }
         private void ToggleSound()
         {
@@ -146,19 +163,26 @@ namespace Puzzle.Gravity
         }
         private void DismissHome()
         {
-            if(home){home.gameObject.SetActive(false);Destroy(home.gameObject);}
+            if(home){home.gameObject.SetActive(false);PuzzleUI.DisposeView(home.gameObject);}
             home=null;homeContent=null;homeLogo=null;
             for(int i=0;i<homeFriends.Length;i++)homeFriends[i]=null;
         }
         private void StartFromHome()
         {
+            if(QuickPlay&&session.Solved&&PuzzleCampaign.NextInTheme(levels,levelIndex)<0)
+            {
+                for(int i=0;i<levels.Length;i++)if(CanPlayLevel(i)&&!HasClearedLevel(levels[i].room)){LoadLevel(i);return;}
+                LoadLevel(levelIndex);return;
+            }
+            if(session.Solved&&PuzzleCampaign.NextInTheme(levels,levelIndex)<0){OpenLevels();return;}
             DismissHome();CloseDialog();
             session.SetPause(PauseReason.Menu,false);session.SetPause(PauseReason.Levels,false);
-            if(session.Solved)LoadLevel(Mathf.Min(levelIndex+1,levels.Length-1));
+            if(session.Solved)LoadLevel(PuzzleCampaign.NextInTheme(levels,levelIndex));
             else PresentLevel();
         }
         private void SelectLevel(int index)
         {
+            if(!CanPlayLevel(index))return;
             if(home)
             {
                 DismissHome();CloseDialog();

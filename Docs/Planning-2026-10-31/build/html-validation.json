@@ -1,0 +1,20 @@
+{
+  "title": "말랑궤도 시청각 자료",
+  "images": 20,
+  "audio": [
+    {
+      "duration": 48,
+      "error": null
+    },
+    {
+      "duration": 3.2,
+      "error": null
+    },
+    {
+      "duration": 4.4,
+      "error": null
+    }
+  ],
+  "horizontalOverflow": false,
+  "mobileOverflow": false
+}

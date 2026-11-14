@@ -1,0 +1,9 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>닉네임 입력 QA</title>
+<body><button onclick="mallangCommunity.open()">랭킹 열기</button><output id="qa-state"></output>
+<script>
+window.DEGUL_COMMUNITY_CONFIG={storageKey:'degul-nickname-qa-only'};
+window.unityInstance={SendMessage(){}};
+// Isolated QA transport: never creates or alters a production player.
+window.fetch=async(url,options)=>({ok:true,json:async()=>url.endsWith('/ranking')?{rows:[]}:{ok:true,label:options&&JSON.parse(options.body).label||'테스트AB',sequence:0}});
+document.addEventListener('keydown',e=>{document.getElementById('qa-state').textContent='Game received '+e.key;e.preventDefault();});
+</script><script src="/source/community.js"></script><script>mallangCommunity.ready('QA');</script></body></html>

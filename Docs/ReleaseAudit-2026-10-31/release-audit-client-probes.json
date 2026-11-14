@@ -1,0 +1,25 @@
+{
+  "enrollmentRecovery": {
+    "connected": false,
+    "calls": [
+      "/api/community/enroll",
+      "/api/community/ranking"
+    ],
+    "messages": [
+      [
+        "Puzzle",
+        "SetCommunityConsent",
+        "denied"
+      ]
+    ],
+    "notices": [],
+    "bugReproduced": true
+  },
+  "panelRace": {
+    "headings": [
+      "나의 별친구 이름"
+    ],
+    "tables": 1,
+    "inputs": 1
+  }
+}

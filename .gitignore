@@ -135,3 +135,32 @@ xcuserdata/
 
 # Python helper cache.
 /Tools/__pycache__/
+/Tools/Itch/.deps/
+/Tools/Itch/font-sources/
+/Tools/Itch/*.log
+/Tools/CrazyGames/*.log
+/Tools/CrazyGames/.video-deps/
+
+# Local caches and build packages (published separately as GitHub Releases)
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Bb]uilds/
+**/node_modules/
+**/__pycache__/
+**/.venv/
+**/.vs/
+**/.DS_Store
+**/Thumbs.db
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+~$*
+
+/Releases/

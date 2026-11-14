@@ -31,7 +31,7 @@ namespace Puzzle.Editor
                 var canvas=root.GetComponent<Canvas>();canvas.renderMode=RenderMode.WorldSpace;
                 var rect=root.GetComponent<RectTransform>();rect.sizeDelta=new Vector2(width,height);
                 var camera=cameraObject.GetComponent<Camera>();camera.orthographic=true;camera.orthographicSize=height/2f;camera.transform.position=new Vector3(0,0,-10);camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=PuzzleUI.Cream;camera.targetTexture=texture;camera.cullingMask=1<<5;camera.nearClipPlane=.1f;camera.farClipPlane=30;canvas.worldCamera=camera;
-                var title=PuzzleUI.Label("Title",rect,motion==0?(first==20?"말랑궤도 · 새로운 친구 20종":"말랑궤도 · 20가지 작은 친구"):motion==1?"말랑궤도 · 움직이는 친구들":"말랑궤도 · 도착한 친구들",38,PuzzleUI.Ink);title.fontStyle=FontStyle.Bold;PuzzleUI.Box(title.rectTransform,20,1123,1160,60);
+                var title=PuzzleUI.Label("Title",rect,motion==0?(first==20?"데굴데굴 · 새로운 친구 20종":"데굴데굴 · 20가지 작은 친구"):motion==1?"데굴데굴 · 움직이는 친구들":"데굴데굴 · 도착한 친구들",38,PuzzleUI.Ink);title.fontStyle=FontStyle.Bold;PuzzleUI.Box(title.rectTransform,20,1123,1160,60);
                 var subtitle=PuzzleUI.Label("Subtitle",rect,"말랑한 네모 몸체 · 20가지 소재와 움직임 · 스킨마다 전용 3색",20,PuzzleUI.Muted);PuzzleUI.Box(subtitle.rectTransform,20,1086,1160,34);
                 for(int slot=0;slot<20;slot++)
                 {

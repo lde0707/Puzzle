@@ -7,7 +7,7 @@ namespace Puzzle.Gravity
     {
         public static readonly float[] Notes={659.25f,783.99f,880f,1046.5f,1174.66f,1318.51f};
         public const float FinalNote=1567.98f;
-        public static AudioClip MakeClip(int index)=>Create("Star ascent "+index,Notes[index],.25f,false);
+        public static AudioClip MakeClip(int index)=>Create("Star ascent "+index,Notes[index],.38f,false);
         public static AudioClip MakeFinale()=>Create("Soft star finale",FinalNote,.68f,true);
         private static AudioClip Create(string name,float frequency,float duration,bool finale)
         {
@@ -17,10 +17,10 @@ namespace Puzzle.Gravity
             {
                 float t=i/(float)rate;
                 float attack=Mathf.Min(1,t/(finale?.006f:.008f));
-                float tail=Mathf.Clamp01((duration-t)/.035f);
+                float tail=Mathf.Clamp01((duration-t)/.06f);
                 float fundamental=Mathf.Sin(t*2*Mathf.PI*frequency);
                 float shimmer=Mathf.Sin(t*2*Mathf.PI*frequency*2)*.16f*Mathf.Exp(-t*18);
-                float tone=(fundamental+shimmer)*Mathf.Exp(-t*(finale?6:14));
+                float tone=(fundamental+shimmer)*Mathf.Exp(-t*(finale?6:9));
                 if(finale)
                 {
                     // Warm C-major body below the bright final G, with a soft attack.

@@ -22,14 +22,14 @@ namespace Puzzle.Editor
             {
                 var scene=EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects,NewSceneMode.Single);
                 var camera=UnityEngine.Object.FindFirstObjectByType<Camera>();camera.orthographic=true;camera.backgroundColor=PuzzleUI.Cream;camera.allowHDR=false;
-                new GameObject("말랑궤도",typeof(GravityPuzzleApp));
+                new GameObject("데굴데굴",typeof(GravityPuzzleApp));
                 EditorSceneManager.SaveScene(scene,ScenePath);
             }
             EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(ScenePath,true)};
             PlayerSettings.WebGL.template="PROJECT:MobileTest";
             AssetDatabase.SaveAssets();
             GravityPrototypeChecks.Run();
-            Debug.Log("말랑궤도 prototype prepared. Play GravityPrototype or use Puzzle/iPhone Test/Build Game (Web).");
+            Debug.Log("데굴데굴 prototype prepared. Play GravityPrototype or use Puzzle/iPhone Test/Build Game (Web).");
         }
         [MenuItem("Puzzle/Prototype/Build Web")]
         public static void BuildWeb()
@@ -50,9 +50,10 @@ namespace Puzzle.Editor
             count=0;
             TestStarAttempts();
             TestCollection();
-            Check(ProgressSaveService.StorageDirectory("C:/PuzzleStudio/말랑궤도",true)==ProgressSaveService.StorageDirectory("C:/PuzzleStudio/Android Puzzle",true),"display rename preserves Windows saves");
+            Check(ProgressSaveService.StorageDirectory("C:/PuzzleStudio/데굴데굴",true)==ProgressSaveService.StorageDirectory("C:/PuzzleStudio/Android Puzzle",true),"display rename preserves Windows saves");
             Check(ProgressSaveService.StorageDirectory("/idbfs/existing",false)==Path.Combine("/idbfs/existing","MellowGravity"),"display rename preserves Web and mobile saves");
-            Check(Resources.Load<Texture2D>("GravityPuzzle/Brand/mallang-orbit-wordmark")!=null,"generated title wordmark included in game resources");
+            Check(Resources.Load<Texture2D>("GravityPuzzle/Brand/degul-degul-wordmark-ko")!=null,"generated Korean wordmark included in game resources");
+            Check(Resources.Load<Texture2D>("GravityPuzzle/Brand/degul-degul-wordmark-en")!=null,"generated English wordmark included in game resources");
             var levels=JsonUtility.FromJson<LayoutDocument>(Resources.Load<TextAsset>("GravityPuzzle/layouts").text).layouts;
             Check(levels.Length==16 && levels.Select(l=>l.room).Distinct().Count()==16,"16 original levels retained");
             var late=JsonUtility.FromJson<LayoutDocument>(Resources.Load<TextAsset>("GravityPuzzle/late_levels").text).layouts;

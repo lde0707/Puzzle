@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {md5,saveRoot,envelopeSequence} from './save-continuity.js';
+for(let n=0;n<260;n++)for(const s of ['x'.repeat(n),'데굴'.repeat(n)])assert.equal(md5(s),createHash('md5').update(s).digest('hex'));
+assert.equal(saveRoot('https://html-classic.itch.zone/html/20227853/index.html?v=old'),'/idbfs/070851ede8382077bc86fa7b43d11215');
+const payload=JSON.stringify({dataVersion:'v1',completed:['F0'],current:{},collection:{wallet:31,owned:[0,19],selected:19}});
+let checksum=2166136261;for(let i=0;i<payload.length;i++)checksum=Math.imul(checksum^payload.charCodeAt(i),16777619)>>>0;
+const e={version:1,sequence:10,payload,checksum:checksum.toString(16).padStart(8,'0')};
+const record=v=>({contents:new TextEncoder().encode(JSON.stringify(v))});
+assert.equal(envelopeSequence(record(e)),10);
+assert.equal(envelopeSequence(record({...e,payload:payload+' '})),-1);
+assert.equal(envelopeSequence(record({...e,sequence:-1})),-1);
+assert.equal(envelopeSequence(record({...e,version:2})),-1);
+assert.equal(envelopeSequence({contents:new Uint8Array(1048577)}),-1);
+console.log('PASS Unity URL hashes, query independence, Korean payload checksums, damaged/oversized save rejection.');

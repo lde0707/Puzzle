@@ -15,7 +15,7 @@ namespace Puzzle.Gravity
                 mesh.PopulateUIVertex(ref vertex,i);
                 float y=Mathf.InverseLerp(rect.yMin,rect.yMax,vertex.position.y);
                 Color original=vertex.color;
-                Color tint=y>.35f?Color.Lerp(original,Color.white,(y-.35f)*.24f):Color.Lerp(original,new Color(.28f,.19f,.40f),(.35f-y)*.19f);
+                Color tint=y>.35f?Color.Lerp(original,Color.white,(y-.35f)*.10f):Color.Lerp(original,new Color(.28f,.19f,.40f),(.35f-y)*.10f);
                 tint.a=original.a;vertex.color=tint;mesh.SetUIVertex(vertex,i);
             }
         }

@@ -1,0 +1,41 @@
+나의 데굴데굴 기록|My Degul Degul records|我的Degul Degul记录|Degul Degulの記録
+이 itch.io 버전은 광고와 온라인 랭킹 없이 플레이할 수 있어요. 게임이 닉네임이나 플레이 기록을 별도 랭킹 서버로 전송하지 않아요.|This itch.io edition has no ads or online rankings. It does not send names or gameplay records to a ranking server.|此itch.io版本没有广告或在线排名，不会向排名服务器发送昵称或游玩记录。|このitch.io版には広告やオンラインランキングがありません。名前やプレイ記録をランキングサーバーに送りません。
+단계·별·스킨은 현재 브라우저에 저장돼요. 단계 선택에서 최고 별과 예상 상위 등급을, 단계 상세에서 누적 이동·초기화 횟수를 볼 수 있어요.|Stages, stars and skins are saved in this browser. Stage selection shows your best stars and estimated tier; details show moves and restarts.|关卡、星星和皮肤保存在当前浏览器中。关卡选择显示最高星数和预估档位，详情显示移动与重置次数。|ステージ・星・スキンはこのブラウザーに保存されます。選択画面に最高スターと推定ランク、詳細に移動とリセット回数を表示します。
+예상 상위 등급은 게임의 기본 난이도 기준이며, 다른 사람들과 비교한 실시간 순위가 아니에요.|Estimated tiers use the game's difficulty model, not a live comparison with other players.|预估档位依据游戏难度，不是与其他玩家比较的实时排名。|推定ランクはゲームの難易度基準です。他のプレイヤーと比較したリアルタイム順位ではありません。
+다른 주소나 기기로 옮기거나 업데이트 전에 기록을 보관하려면 설정 → 기록 옮기기 · 저장 파일을 이용해 주세요. 브라우저 데이터 삭제·비공개 모드·저장 제한으로 기록이 사라질 수 있어요.|Use Settings → Records → Transfer progress to back up before updates or move devices. Clearing browser data, private mode or storage limits may erase progress.|更新前或更换设备时，请通过设置→记录→转移存档进行备份。清除浏览器数据、隐私模式或存储限制可能导致记录丢失。|更新前や端末移行時は設定→記録→セーブデータの移行でバックアップしてください。ブラウザーデータの削除、プライベートモード、保存制限で記録が失われる場合があります。
+itch.io 자체의 접속 정보 처리는 itch.io 개인정보처리방침을 따라요.|itch.io handles its own access data under its privacy policy.|itch.io自身的访问数据按其隐私政策处理。|itch.io自体のアクセス情報は同社のプライバシーポリシーに従います。
+게임으로 돌아가기|Back to game|返回游戏|ゲームに戻る
+기록을 함께 데려가요|Take your progress with you|带上你的记录|記録を一緒に連れていこう
+단계·스킨·별·설정을 파일 또는 저장 코드로 보관하고 다른 주소나 기기에서 이어받아요. 이 기능은 파일을 서버에 업로드하지 않아요.|Back up stages, skins, stars and play settings as a file or save code. Import on another device or address. Files are not uploaded to a server. Language stays a device preference.|将关卡、皮肤、星星和游玩设置备份为文件或存档代码，可在其他地址或设备导入。文件不会上传到服务器。语言是本设备偏好。|ステージ・スキン・星・プレイ設定をファイルやコードで保存し、別の端末やアドレスに移せます。サーバーにはアップロードしません。言語は端末ごとの設定です。
+현재 기록 내보내기|Export current progress|导出当前记录|現在の記録を書き出す
+불러오기 전 기록 내보내기|Export pre-import backup|导出导入前备份|読み込み前の記録を書き出す
+파일로 불러오기|Import a file|从文件导入|ファイルから読み込む
+JSON 저장 파일|JSON save file|JSON存档文件|JSONセーブファイル
+파일 저장이 안 될 때: 저장 코드 복사 / 붙여넣기|Can't save a file? Copy / paste a save code|无法保存文件？复制或粘贴存档代码|ファイル保存ができない場合：コードをコピー／貼り付け
+내 저장 코드|My save code|我的存档代码|自分のセーブコード
+내 코드 전체 선택|Select my entire code|全选我的代码|コードをすべて選択
+전체 선택 후 Ctrl+C 또는 휴대폰의 복사 메뉴를 사용해 개인 메모에 보관하세요. 저장 코드에는 플레이 기록이 들어 있으니 공개 댓글에는 붙이지 마세요.|Select all and use Ctrl+C or your phone's Copy menu. Keep the code privately; do not post it in public comments.|全选后按Ctrl+C或使用手机复制菜单，保存到私人笔记中。请勿将存档代码发布到公开评论。|全選択後にCtrl+Cかスマホのコピーを使い、個人のメモに保管してください。公開コメントには貼らないでください。
+옮길 저장 코드 붙여넣기|Paste a save code to import|粘贴要导入的存档代码|移行するセーブコードを貼り付け
+붙여넣은 기록 확인|Review pasted progress|检查粘贴的记录|貼り付けた記録を確認
+기존 공개 링크에서도 설정 → 기록 옮기기에서 파일을 내보낼 수 있어요. itch.io 로그인만으로 게임 기록이 자동 동기화되지는 않아요.|Export from the original site using Settings → Transfer progress. Signing into itch.io does not sync game progress.|可在原网站通过设置→转移存档导出。登录itch.io不会自动同步游戏记录。|以前のサイトの設定→記録の移行から書き出せます。itch.ioへのログインだけでは記録は同期されません。
+저장 파일 다운로드를 요청했어요. 다운로드가 막히면 아래 저장 코드를 복사해서 보관하세요.|Download requested. If blocked, copy the save code below.|已请求下载。如果下载被阻止，请复制下方存档代码保存。|ダウンロードを開始しました。できない場合は下のコードをコピーして保存してください。
+이어받을 기록을 확인해 주세요|Review incoming progress|确认要导入的记录|引き継ぐ記録を確認
+단계별 최고 별과 보유 스킨을 합칩니다. 보유 별을 단순히 더하지 않으며, 누적 기록은 더 큰 값을 유지해요. 현재 기록은 먼저 내보내서 보관해 주세요.|Best stage stars and owned skins are merged. Wallets are not simply added; cumulative counters keep the larger value. Export your current progress first.|将合并各关最高星数和已有皮肤。钱包不会简单相加，累计记录保留较大值。请先导出当前存档。|最高スターと所持スキンを統合します。星は単純加算せず、累計記録は大きい値を維持します。先に現在の記録を書き出してください。
+현재 기록을 먼저 내려받기|Download current backup first|先下载当前备份|先に現在の記録をダウンロード
+이 기록 이어받기|Import this progress|导入此记录|この記録を引き継ぐ
+기록을 저장하고 있어요…|Saving progress…|正在保存记录…|記録を保存しています…
+취소|Cancel|取消|キャンセル
+저장 파일을 읽지 못했어요.|Couldn't read this save file.|无法读取此存档。|セーブファイルを読み取れませんでした。
+파일을 읽지 못했어요.|Couldn't read this file.|无法读取文件。|ファイルを読み取れませんでした。
+1MB 이하 저장 파일을 골라 주세요.|Choose a save file under 1 MB.|请选择1MB以下的存档。|1MB以下のセーブファイルを選んでください。
+기록 이어받기|Import progress|导入记录|記録の引き継ぎ
+현재 기록:|Current progress:|当前记录：|現在の記録：
+완료|Cleared|已完成|クリア
+보유 스킨|Skins|已有皮肤|所持スキン
+보유 별|Stars|持有星星|所持スター
+개||个|個
+파일이 너무 크거나 형식이 달라요.|File too large or wrong format.|文件过大或格式不正确。|ファイルが大きすぎるか形式が違います。
+JSON 저장 파일을 골라 주세요.|Choose a JSON save file.|请选择JSON存档文件。|JSONセーブファイルを選んでください。
+데굴데굴 저장 파일이 아니에요.|This is not a Degul Degul save file.|这不是Degul Degul存档文件。|Degul Degulのセーブファイルではありません。
+파일이 손상되었어요. 원본을 다시 내보내 주세요.|File damaged. Export the original again.|文件损坏，请重新导出原始存档。|ファイルが破損しています。元の記録を再度書き出してください。
+진행 정보가 없어요.|No progress data found.|未找到进度数据。|進行データがありません。

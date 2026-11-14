@@ -1,0 +1,228 @@
+설정|Settings|设置|設定
+플레이|Play|游玩|プレイ
+언어|Language|语言|言語
+기록|Records|记录|記録
+원하는 언어를 골라 주세요|Choose your language|选择语言|言語を選んでください
+바로 적용되고 다음에도 기억해요|Applies now. Saved for next time.|立即生效，下次也会保留。|すぐに反映され、次回も記憶します
+소중한 기록을 함께 데려가요|Take your progress with you|带上你的珍贵记录|大切な記録を持っていこう
+게임 시작|Play|开始游戏|ゲーム開始
+단계 선택|Stages|关卡选择|ステージ選択
+시작 화면|Title screen|标题画面|タイトルへ
+메인 화면으로|Title screen|返回标题|タイトルへ
+돌아가기|Back|返回|戻る
+계속하기|Resume|继续|つづける
+이어 하기|Keep playing|继续游戏|つづける
+시작하기|Start|开始|スタート
+나가기|Exit|退出|閉じる
+저장하기|Save|保存|保存
+배경음악|Music|背景音乐|BGM
+효과음|Sound effects|音效|効果音
+빠른 진행|Fast play|快速游玩|高速プレイ
+큰 글씨|Large text|大字体|文字を大きく
+켜짐|ON|开启|オン
+꺼짐|OFF|关闭|オフ
+잠깐, 쉬어가요|Take a little break|休息一下吧|ちょっとひと休み
+친구들은 여기서 기다릴게요.|Your friends will wait right here.|朋友们会在这里等你。|みんなはここで待っているよ
+나에게 편한 속도로, 말랑하게|Make yourself comfy|用舒服的节奏，软软地玩|自分のペースで、のんびり
+기록 옮기기 · 저장 파일|Transfer progress|转移存档|セーブデータの移行
+단계·스킨·별을 파일로 보관하고 이어받아요.|Back up stages, skins and stars to a file.|将关卡、皮肤和星星保存到文件中。|ステージ・スキン・星をファイルに保存
+이 기기에 자동으로 저장돼요|Saved on this device|自动保存在此设备|この端末に自動保存します
+랭킹 · 기록|Records|排名与记录|ランキング・記録
+나의 누적 기록|My records|我的累计记录|自分の累計記録
+온라인 랭킹 참여는 공개 웹 버전에서 가능해요.|Online rankings are on the public web edition.|在线排名可在公开网页版中参与。|オンラインランキングは公開ウェブ版で利用できます
+중력을 돌려, 우리 모두 제자리로|Tilt gravity. Bring everyone home.|转动重力，带大家回家|重力を変えて、みんなをゴールへ
+손끝에서 만나는 말랑한 우주|A squishy universe at your fingertips|指尖上的软萌宇宙|指先で出会う、やわらかな宇宙
+테마 완주! 다음 여행을 골라 주세요|Theme complete! Pick your next journey.|主题完成！选择下一段旅程吧。|テーマクリア！次の旅を選ぼう
+이어서 하기|Continue|继续|つづきから
+출발해요|Let's go!|出发吧！|出発しよう
+어떤 여행을 떠날까요?|Where shall we go?|要去哪里旅行呢？|どんな旅に出よう？
+같은 테마의 앞 단계를 깨면 다음 단계가 열려요\n예상 상위는 구간 등급 · 눌러서 상세 기록 보기|Clear stages in order to unlock the next.\nEstimated tier · Tap for details|按顺序通关，解锁下一关。\n预估档位 · 点击查看详情|順番にクリアして次を解放\n推定ランク・タップで詳細
+최고 기록 기준 · 위아래로 드래그|Best records · Scroll to browse|按最佳记录 · 上下滑动|ベスト記録・上下にスクロール
+앞 단계를 먼저 완료해 주세요|Clear the previous stage first|请先完成上一关|前のステージをクリアしよう
+부터 완료해 주세요.\n앞 단계를 순서대로 깨면 열려요.\n기존 클리어 기록과 별은 유지돼요.| first.\nClear earlier stages in order to unlock.\nYour existing records and stars are kept.|开始完成。\n按顺序通关即可解锁。\n已有记录和星星会保留。|からクリアしよう。\n順番にクリアすると解放されます。\n以前の記録と星は残ります。
+도전 가능|Available|可挑战|挑戦可能
+진행 중|In progress|进行中|挑戦中
+잠김|Locked|未解锁|ロック中
+기본 중력|Gravity|基础重力|基本の重力
+별문 여행|Portals|星门之旅|星の扉の旅
+크기 변환|Resizing|大小变换|サイズ変化
+숨바꼭질|Peekaboo|捉迷藏|かくれんぼ
+입문|Intro|入门|入門
+기본|Basics|基础|基本
+심화|Advanced|进阶|応用
+도전|Challenge|挑战|挑戦
+단계|Stage|关|ステージ
+이 단계 누적 이동|Stage moves:|本关累计移动：|このステージの累計移動：
+누적 이동 횟수|Total moves|累计移动次数|累計移動回数
+초기화 횟수|Restarts|重置次数|リセット回数
+최고 기록|Best:|最佳记录：|ベスト：
+기존 클리어 기록|Previous clear|已有通关记录|以前のクリア記録
+아직 클리어 전이에요|Not cleared yet|尚未通关|まだクリアしていません
+예상 상위 등급|Estimated top tier|预估排名档位|推定上位ランク
+예상 상위|Est. top|预估前|推定上位
+퍼펙트 클리어|Perfect clear|完美通关|パーフェクト
+기본 밸런스 기준 · 표본 부족/오프라인|Estimated from difficulty · Offline / not enough data|依据难度预估 · 离线或样本不足|難易度から推定・オフライン／データ不足
+기본 밸런스 기준|Difficulty estimate|基础难度预估|難易度による推定
+퍼펙트 보상 · 0.1% 고정 등급|Perfect reward · Fixed 0.1% tier|完美奖励 · 固定0.1%档位|パーフェクト報酬・0.1%固定
+이 단계 최고 기록 · 퍼펙트 고정 등급|Stage best · Perfect tier|本关最佳 · 完美固定档位|このステージのベスト・パーフェクト
+이 단계 최고 기록 ·|Stage best ·|本关最佳 ·|このステージのベスト・
+참여자 기준|Player data|玩家数据|参加者の記録
+참여자|Players:|参与者：|参加者：
+명의 최고 이동 기록 기준| players' best move counts|人的最佳移动记录|人の最少移動記録
+\n실제 순위가 아닌 구간 등급이에요.\n퍼펙트: 최소|\nA tier, not a live leaderboard position.\nPerfect: optimal moves|\n这是档位，不是实时排名。\n完美条件：最少移动|\n実順位ではなく区分ランクです。\nパーフェクト：最少移動
+회 · 되돌리기·힌트 미사용| · No undo or hints|次 · 不用撤销或提示|回・戻す／ヒント未使用
+이동 목표|Move target|移动目标|移動目標
+회 이동 ·| moves ·|次移动 ·|回移動・
+회 · 초기화| · Restarts|次 · 重置|回・リセット
+회:|:|次：|回：
+회||次|回
+이동|Moves|移动|移動
+도착|Home|到达|ゴール
+되돌리기|Undo|撤销|戻す
+초기화|Restart|重置|リセット
+초기화 해볼까요?|Restart this stage?|要重置本关吗？|リセットしますか？
+이동 기록은 초기화해요. 힌트 사용 횟수는 유지돼요.|Resets this attempt. Used hints stay used.|重置本次移动，已用提示次数保留。|今回の移動をリセット。ヒントの使用回数は維持されます
+방향키 / WASD · 되돌리기 Z · 초기화 R|Arrows / WASD · Undo Z · Restart R|方向键 / WASD · 撤销 Z · 重置 R|矢印 / WASD・戻す Z・リセット R
+위|Up|上|上
+아래|Down|下|下
+왼쪽|Left|左|左
+오른쪽|Right|右|右
+힌트 다시보기|Show hint again|重看提示|ヒントをもう一度
+힌트|Hint|提示|ヒント
+찾는 중…|Searching…|寻找中…|探索中…
+별빛이 다음 길을 찾고 있어요…|Finding your next move…|星光正在寻找下一步…|次の一手を探しています…
+쪽으로 데굴해 볼까요?| — try rolling this way!|方向滚动试试吧！|へ転がってみよう！
+다음 길을 확인하지 못했어요.\n힌트 횟수는 사용하지 않았어요.|Couldn't find a hint yet.\nNo hint was used.|暂时未找到提示。\n没有消耗提示次数。|ヒントが見つかりませんでした。\n回数は消費していません
+이 배치에서는 길이 없어요. 되돌리기를 해보세요.\n힌트 횟수는 사용하지 않았어요.|No solution from here. Try undoing.\nNo hint was used.|此布局没有解法，请尝试撤销。\n没有消耗提示次数。|ここからは解けません。戻してみよう。\nヒントは消費していません
+힌트를 저장하지 못했어요. 다시 눌러 주세요.|Couldn't save the hint. Please try again.|提示未保存，请重试。|ヒントを保存できません。もう一度お試しください
+위쪽 길을 먼저 찾아볼까요?|Try the path above first.|先看看上方的路吧。|まず上の道を探してみよう
+큰 친구는 넓은 길이 필요해요.|Big friends need wider paths.|大朋友需要更宽的路。|大きな友だちには広い道が必要
+친구와 같은 색 자리로, 모두 함께!|Everyone to their matching color!|一起去同色的目的地吧！|みんなで同じ色のゴールへ！
+같은 색 목적지를 찾아요. 도착한 친구도 다음 중력에 함께 움직여요.|Match each friend's goal color. Friends on goals still move with gravity.|找到同色目标。到达目标的朋友仍会随重力移动。|同じ色のゴールへ。到着後も次の重力で動きます
+같은 중력, 함께 데굴!|One gravity. Everyone rolls!|同一重力，一起滚动！|同じ重力で、一緒にころころ！
+우리의 궤도에 오신 걸 환영해요|Welcome to our little orbit|欢迎来到我们的轨道|小さな軌道へようこそ
+작은 우주\n함께 착륙|Little universe\nLand together|小小宇宙\n一起着陆|小さな宇宙\n一緒に着地
+작은 우주에, 모두 사뿐히!|A soft landing for everyone!|大家轻轻着陆吧！|みんな、ふわっと着地！
+우리, 사뿐히 착륙!|A lovely landing!|轻轻着陆！|ふわっと着地！
+다음 우주로|Next stage|下一关|次のステージ
+테마 선택|Choose a theme|选择主题|テーマを選ぶ
+한번 더 데굴|Roll again|再滚一次|もう一度ころころ
+한 번 더 말랑|One more roll|再玩一次|もう一度
+최고 별 기록 유지|Best star record kept|保留最高星数|最高スター記録を維持
+\n구간 등급 · 최고 평가보다 늘어난 별만 받아요|\nTier estimate · Only improved stars are awarded|\n档位预估 · 只获得超过最佳记录的星星|\n推定ランク・ベストを超えた星だけ獲得
+별 +|Stars +|星星 +|星 +
+달성|Met|达成|達成
+초과|Over|超出|超過
+미사용|Not used|未使用|未使用
+사용|Used|已使用|使用
+반짝, 별문 사용법|Meet the star portals|闪闪星门使用指南|星の扉の使い方
+별문\n규칙|Portal\nhelp|星门\n规则|星の扉\nルール
+변신\n규칙|Size\nhelp|变身\n规则|サイズ\nルール
+길바꿈\n규칙|Path\nhelp|换路\n规则|道の変化\nルール
+같은 빛의 입구끼리 연결돼요|Matching lights connect two portals|相同光色的入口互相连接|同じ光の扉がつながっています
+밝은 입구를 향해 들어가요.\n연결된 입구 바로 앞에 나와요.|Enter the glowing face.\nEmerge just in front of its partner.|从发光面进入。\n会出现在相连入口前方。|光る面から入ろう。\nつながる扉のすぐ前に出ます
+포탈을 누르면 반대편 출구가 크게 빛나요.\n출구에 친구가 있으면 전송되지 않아요.|Tap a portal to highlight its exit.\nA blocked exit prevents teleporting.|点击星门可点亮对应出口。\n出口有朋友时无法传送。|扉を押すと出口が光ります。\n出口に友だちがいると転送できません
+벽에 있는 문도 같아요. 전송 후에는 멈춰요.|Wall portals work the same. Teleporting ends the slide.|墙上的星门规则相同。传送后会停止。|壁の扉も同じです。転送後は止まります
+빛나는 입구로 진입 · 누르면 출구가 빛나요|Enter the glow · Tap to see the exit|从发光处进入 · 点击显示出口|光る入口へ・押すと出口が光る
+빛나는 입구를 향해 들어가요.|Enter through the glowing face.|朝发光入口移动。|光る面から入ろう
+문 앞 화살표를 따라 들어가요.|Enter through the glowing face.|朝发光入口移动。|光る面から入ろう
+문 앞 화살표를 따라 들어가요. 같은 문자로 나오며 포탈을 누르면 연결을 볼 수 있어요.|Enter the glowing face. Tap a portal to see its partner.|从发光面进入。点击星门可查看连接。|光る面から入ろう。扉を押すとつながりが見えます
+출구가 막혔어요. 친구를 먼저 비켜 주세요.|Exit blocked. Move your friend first.|出口被挡住了，先让朋友让开。|出口がふさがっています。先に友だちを動かそう
+출구가 막히면 들어갈 수 없어요. 친구들의 이동 순서를 생각해 보세요.|A blocked exit stops entry. Plan the order your friends move.|出口受阻时无法进入，请安排朋友的移动顺序。|出口がふさがると入れません。移動の順番を考えよう
+같은 문자|Matching portals|相连星门|つながる扉
+같은 색|Matching colors|同色|同じ色
+별문|Portal|星门|星の扉
+말랑, 크기를 바꿔요|Squish into a new size|软软地变换大小|サイズを変えよう
+틀의 왼쪽 아래에 맞춰 멈춰요|Stop at the frame's lower-left corner|停在框的左下角|枠の左下に合わせて止まろう
++ 넓은 틀은 2×2 · − 작은 틀은 1×1|+ Large frame: 2×2 · − Small frame: 1×1|+ 大框：2×2 · − 小框：1×1|+ 大きな枠は2×2・− 小さな枠は1×1
+지나가기만 하면 변하지 않아요.\n모두 멈춘 뒤 크기가 바뀌고 그 턴은 끝나요.|Passing over does not resize.\nAfter all stop, sizes change and the turn ends.|经过不会变身。\n全部停止后才改变大小并结束回合。|通り過ぎるだけでは変わりません。\n全員が止まるとサイズが変わり、ターン終了
+커질 자리에 친구가 있으면 그대로예요.\n목적지는 색과 크기가 모두 맞아야 해요.|No room to grow? Size stays the same.\nMatch both goal color and size.|没有长大的空间就保持原样。\n目标的颜色与大小都要匹配。|大きくなる場所がなければそのまま。\nゴールは色もサイズも合わせよう
+작은 포탈은 작은 친구만 · 전송 후 크기 변환|Small portals fit small friends · Resize after teleporting|小星门只容纳小朋友 · 传送后变身|小さな扉は小さな友だちだけ・転送後に変化
+변환대를 누르면 사용법을 볼 수 있어요.|Tap a resizer for help.|点击变换台查看说明。|変換台を押すと説明が見られます
+변환대에서 멈춰요 · 목적지의 색과 크기를 맞춰요|Stop on a resizer · Match goal color and size|停在变换台 · 匹配目标颜色和大小|変換台で止まる・色とサイズを合わせよう
+커질 자리가 막혔어요. 친구를 먼저 비켜 주세요.|No room to grow. Move your friend first.|长大的位置被挡住了，先让朋友让开。|大きくなる場所がありません。先に友だちを動かそう
+확대대: 왼쪽 아래에 멈추면 2×2로 커져요.|Grow pad: stop at its lower-left to become 2×2.|放大台：停在左下角变成2×2。|拡大台：左下で止まると2×2に
+축소대: 왼쪽 아래에 멈추면 1×1로 작아져요.|Shrink pad: stop at its lower-left to become 1×1.|缩小台：停在左下角变成1×1。|縮小台：左下で止まると1×1に
+길도 함께 숨바꼭질|The paths play peekaboo too|道路也在捉迷藏|道も一緒にかくれんぼ
+방향을 한 번 누를 때마다 길이 바뀌어요|Each direction press switches the paths|每按一次方向，道路就会切换|方向を押すたびに道が変わります
+점선은 열린 길 · 도톰한 블록은 벽|Dotted paths are open · Solid blocks are walls|虚线是通路 · 实心方块是墙|点線は通れる道・実体のブロックは壁
+친구들이 모두 멈춘 뒤 열리고 닫혀요.\n제자리인 방향을 눌러도 한 턴이 지나가요.|Paths switch after everyone stops.\nA direction with no movement still counts as a turn.|全部停止后，道路切换。\n即使原地不动，也会经过一回合。|全員が止まってから切り替わります。\n動かない方向でも1ターン進みます
+● 살구와 ●● 민트는 서로 번갈아 나타나요.\n친구가 있는 칸은 그 턴 동안 열린 채 기다려요.|● Peach and ●● Mint take turns.\nA cell occupied by a friend stays open that turn.|● 杏色与●●薄荷色交替出现。\n朋友占据的格子会保持开放一回合。|●ピーチと●●ミントが交代します。\n友だちがいるマスはそのターン開いたまま
+포탈 → 크기 변환 → 길바꿈 순서예요.|Order: portal → resize → path switch|顺序：传送 → 变换大小 → 道路切换|順番：転送→サイズ変化→道の切替
+포탈 이동까지 끝나면 길이 바뀌어요.|Paths switch after teleporting finishes.|传送结束后道路切换。|転送が終わると道が切り替わります
+블록을 누르면 현재 상태를 볼 수 있어요.|Tap a block to see its state.|点击方块查看当前状态。|ブロックを押すと状態がわかります
+● 살구 닫힘 · ●● 민트 열림 · 다음 턴 교대|● Peach closed · ●● Mint open · Switch next turn|● 杏色关闭 · ●● 薄荷色开放 · 下回合交替|●ピーチ閉・●●ミント開・次のターンに交代
+● 살구 열림 · ●● 민트 닫힘 · 다음 턴 교대|● Peach open · ●● Mint closed · Switch next turn|● 杏色开放 · ●● 薄荷色关闭 · 下回合交替|●ピーチ開・●●ミント閉・次のターンに交代
+● 살구 닫힘 · 한 턴 뒤 점선 길이 열려요|● Peach closed · Opens next turn|● 杏色关闭 · 下回合开放|●ピーチ閉・次のターンに開く
+● 살구 열림 · 한 턴 뒤 블록이 돌아와요|● Peach open · Closes next turn|● 杏色开放 · 下回合关闭|●ピーチ開・次のターンに閉じる
+● 살구|● Peach|● 杏色|● ピーチ
+●● 민트|●● Mint|●● 薄荷色|●● ミント
+닫힘 · 한 턴 뒤 열려요|Closed · Opens next turn|关闭 · 下回合开放|閉・次のターンに開く
+열림 · 한 턴 뒤 닫혀요|Open · Closes next turn|开放 · 下回合关闭|開・次のターンに閉じる
+대기 중 · 친구가 있어 열린 채 기다려요|Waiting · Occupied cells stay open|等待中 · 有朋友的格子保持开放|待機中・友だちがいるので開いたまま
+알겠어요, 출발!|Got it, let's go!|明白了，出发！|わかった、出発！
+알겠어요, 말랑!|Got it!|明白了！|わかった！
+낙서 끝|Done drawing|结束涂鸦|お絵かき終了
+낙서|Draw|涂鸦|お絵かき
+지우개|Eraser|橡皮|消しゴム
+지우는 중|Erasing|擦除中|消去中
+전체 지우기|Clear all|全部清除|すべて消す
+낙서 중에도 방향 조작 가능 · Ctrl+Z: 낙서 되돌리기|You can still move · Ctrl+Z: undo drawing|涂鸦时仍可移动 · Ctrl+Z：撤销涂鸦|描きながら移動可能・Ctrl+Z：描画を戻す
+메모가 가득 찼어요 · 지우거나 Ctrl+Z로 되돌려요|Drawing full · Erase or use Ctrl+Z|涂鸦已满 · 请擦除或按Ctrl+Z|描画がいっぱい・消すかCtrl+Zで戻そう
+말랑 옷장|Squishy wardrobe|软萌衣橱|もちもちクローゼット
+스킨 뽑기|Skins|皮肤抽取|スキンくじ
+별을 모아, 우리만의 새로운 모습|Collect stars. Meet a new you.|收集星星，遇见新模样|星を集めて、新しい姿に
+수집|Collection|收集|コレクション
+스킨 도감 ·|Skin collection ·|皮肤图鉴 ·|スキン図鑑・
+보유만 보기|Owned only|只看已拥有|所持のみ
+보유 스킨 · 선택하기|Owned · Select|已拥有 · 选择|所持スキン・選択
+보유|Owned|已拥有|所持
+선택 중|Selected|已选择|選択中
+착용 중|Equipped|使用中|着用中
+1개 뽑기\n별 3개|Draw 1\n3 stars|抽取1次\n3颗星|1回引く\n星3個
+10개 연속 뽑기\n별 30개|Draw 10\n30 stars|连续抽取10次\n30颗星|10回引く\n星30個
+중복 없이 · 미보유 스킨마다 같은 확률\n|No duplicates · Equal odds for unowned skins\n|不重复 · 未拥有皮肤概率相同\n|重複なし・未所持スキンは同じ確率\n
+캡슐 한 번에, 새 친구 열 명을 만나요|One capsule, ten new friends|一颗胶囊，十位新朋友|ひとつのカプセルから10人の友だち
+모두 모았어요!|Collection complete!|全部收集完成！|全部集めたよ！
+모든 친구를 만났어요!|You've met every friend!|认识所有朋友啦！|全員と出会えたよ！
+10연속은 별|Ten draws cost|十连需要星星|10回くじに必要な星は
+개를 더 모으면 열려요| more stars needed|颗即可开启|個集めると引けます
+종 남았어요 · 1개씩 뽑아 주세요| left · Draw one at a time|种未收集 · 请单次抽取|種類残り・1回ずつ引こう
+종 보기| styles|种皮肤|種類を見る
+종| styles|种|種類
+위아래로 드래그 · 선택 후 저장하면 착용돼요|Scroll · Select, then save to equip|上下滑动 · 选择后保存即可使用|上下にスクロール・選んで保存すると着用
+지금 착용 중인 스킨이에요.|You're wearing this skin.|正在使用这款皮肤。|現在着用中のスキンです
+아직 저장 전이에요. 저장하기를 눌러 착용해 주세요.\n저장하지 않고 나가면 이전 스킨을 유지해요.|Preview only. Save to equip.\nLeaving without saving keeps your previous skin.|当前为预览，保存后才会使用。\n未保存退出会保留原皮肤。|プレビュー中です。保存して着用。\n保存せずに閉じると元のスキンを維持
+저장 완료! 선택한 스킨을 착용했어요.\n나가기를 눌러 게임을 시작해 보세요.|Saved and equipped!\nClose to get back to the game.|保存并穿戴成功！\n退出即可开始游戏。|保存して着用しました！\n閉じてゲームへ戻ろう
+저장하지 못했어요. 다시 저장하기를 눌러 주세요.\n이전에 착용하던 스킨은 그대로 유지돼요.|Couldn't save. Please try again.\nYour previous skin is still equipped.|保存失败，请重试。\n原皮肤仍保持使用。|保存できませんでした。再度お試しください。\n元のスキンを維持しています
+저장하지 못해 별을 사용하지 않았어요.\n저장 공간을 확인한 뒤 다시 시도해 주세요.|Couldn't save. No stars spent.\nCheck storage and try again.|保存失败，未消耗星星。\n请检查存储空间后重试。|保存できず、星は使っていません。\n保存容量を確認して再試行してください
+별사탕 캡슐|Star candy capsule|星糖胶囊|星キャンディカプセル
+별빛을 모아볼까요?|Gather some starlight?|一起收集星光吧？|星の光を集めよう
+작은 별 셋, 새로운 친구 하나|Three little stars, one new friend|三颗小星星，一位新朋友|小さな星3つで、新しい友だち
+캡슐 속에 누가 기다릴까요?|Who's inside the capsule?|谁在胶囊里等着呢？|カプセルの中はだれかな？
+두근두근, 누구일까요?|Who will it be?|心跳加速，会是谁呢？|どきどき、だれかな？
+별빛이 모이고 있어요|Starlight is gathering|星光正在汇聚|星の光が集まっています
+별빛을 모으는 중…|Gathering starlight…|收集星光中…|星の光を集めています…
+새 친구를 만났어요!|A new friend!|遇见新朋友啦！|新しい友だち！
+세 가지 색, 모두 함께 왔어요|All three colors came along|三种颜色一起来啦|3色そろってやってきたよ
+이미 옷장에 저장했어요 · 남은 별|Saved to your wardrobe · Stars left|已存入衣橱 · 剩余星星|クローゼットに保存済み・残りの星
+이 친구로 바로 착용|Equip now|立即使用|今すぐ着用
+나중에 · 옷장에 보관|Later · Keep in wardrobe|稍后 · 存入衣橱|あとで・クローゼットに保管
+착용을 저장하지 못했어요. 다시 눌러 주세요.|Couldn't equip. Please try again.|穿戴保存失败，请重试。|着用を保存できません。再度お試しください
+착용 완료!\n이 모습으로 출발해 볼까요?|Equipped!\nReady to roll?|穿戴成功！\n用这个模样出发吧？|着用完了！\nこの姿で出発しよう
+옷장에 보관했어요.\n원할 때 선택하고 저장하면 착용돼요.|Kept in your wardrobe.\nSelect and save whenever you like.|已存入衣橱。\n随时选择并保存即可使用。|クローゼットに保管しました。\n好きな時に選んで保存しよう
+열 명의 친구가 기다려요|Ten friends are waiting|十位朋友在等你|10人の友だちが待っているよ
+한 캡슐에서 펼쳐지는 열 가지 설렘|Ten surprises in one capsule|一颗胶囊，十份惊喜|ひとつのカプセルに10のわくわく
+새 친구 10명을 모두|All ten new friends|全部十位新朋友|10人の新しい友だちを
+새 친구 열 명이 왔어요!|Ten new friends are here!|十位新朋友来啦！|10人の新しい友だち！
+새 친구가|New friends:|新朋友：|新しい友だち：
+새 친구|New friend|新朋友|新しい友だち
+마음에 드는 친구를 눌러 바로 착용해요|Tap your favorite to equip|点击喜欢的朋友立即使用|好きな友だちを押して着用
+쭈르르, 반가워요!|Here they come!|来啦，很高兴见到你！|ぞくぞく、こんにちは！
+연출 건너뛰기|Skip animation|跳过动画|演出をスキップ
+저장 파일을 만들었어요|Save file created|已创建存档文件|セーブファイルを作成しました
+저장 파일을 확인해 주세요. 현재 기록은 바뀌지 않았어요.|Check the save file. Your current progress is unchanged.|请检查存档。当前记录未改变。|セーブファイルを確認してください。現在の記録は変わりません
+저장하지 못했어요 · 저장 공간을 확인해 주세요|Couldn't save · Check storage|无法保存 · 请检查存储空间|保存できません・容量を確認してください
+저장하지 못했어요. 저장 공간을 확인하고 다시 시도해 주세요.|Couldn't save. Check storage and try again.|无法保存，请检查存储空间后重试。|保存できません。容量を確認して再試行してください
+이어받았어요! 단계 기록과 스킨을 합쳤고, 같은 별 보상은 한 번만 계산했어요.|Progress imported! Stages and skins merged without duplicating star rewards.|导入成功！已合并关卡和皮肤，星星奖励不会重复计算。|引き継ぎ完了！記録とスキンを統合し、星の重複は除きました
+을|||

@@ -53,6 +53,7 @@ namespace Puzzle.Gravity
         }
     }
     public enum GlyphKind { Up, Left, Down, Right, Pause, Undo, Reset, Grid, Check, Smile, Star, Ring, Face, Happy }
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class PuzzleGlyph : MaskableGraphic
     {
         public GlyphKind kind;
@@ -113,6 +114,13 @@ namespace Puzzle.Gravity
     }
     public static class PuzzleUI
     {
+        public static void DisposeView(UnityEngine.Object view)
+        {
+#if UNITY_EDITOR
+            if(!Application.isPlaying){UnityEngine.Object.DestroyImmediate(view);return;}
+#endif
+            UnityEngine.Object.Destroy(view);
+        }
         public static readonly Color Ink=new Color(.24f,.17f,.37f); // Blackberry #3D2B5E
         public static readonly Color Muted=new Color(.38f,.31f,.48f);
         public static readonly Color Cream=new Color(.98f,.96f,1f);
@@ -155,7 +163,8 @@ namespace Puzzle.Gravity
         }
         public static Text Label(string name,Transform parent,string value,int size,Color color,TextAnchor alignment=TextAnchor.MiddleCenter)
         {
-            var r=Rect(name,parent);var text=r.gameObject.AddComponent<Text>();text.font=Font;text.text=value;text.fontSize=size;text.color=color;text.alignment=alignment;
+            var r=Rect(name,parent);var text=r.gameObject.AddComponent<PuzzleLocalizedText>();text.font=PuzzleLanguage.CurrentFont;text.text=value;text.fontSize=size;text.color=color;text.alignment=alignment;
+            text.resizeTextForBestFit=true;text.resizeTextMinSize=9;text.resizeTextMaxSize=size;
             text.raycastTarget=false;text.horizontalOverflow=HorizontalWrapMode.Wrap;text.verticalOverflow=VerticalWrapMode.Truncate;return text;
         }
         public static PuzzleGlyph Glyph(Transform parent,GlyphKind kind,Color color)

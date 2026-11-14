@@ -24,7 +24,7 @@ namespace Puzzle.Editor
         public static void ApplyBaseSettings()
         {
             PlayerSettings.companyName = "PuzzleStudio";
-            PlayerSettings.productName = "말랑궤도";
+            PlayerSettings.productName = "데굴데굴";
             PlayerSettings.bundleVersion = "0.1.0";
             PlayerSettings.SetApplicationIdentifier(NamedBuildTarget.Android, "com.puzzlestudio.androidpuzzle");
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;

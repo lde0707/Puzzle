@@ -1,0 +1,22 @@
+[
+  {
+    "durationMilliseconds": [
+      48000,
+      3200,
+      4400
+    ],
+    "file": "말랑궤도 System 기획서.pptx",
+    "audio": 3,
+    "slides": 45
+  },
+  {
+    "durationMilliseconds": [
+      48000,
+      3200,
+      4400
+    ],
+    "file": "말랑궤도 UI 기획서.pptx",
+    "audio": 3,
+    "slides": 31
+  }
+]

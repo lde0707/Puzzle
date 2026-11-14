@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Puzzle.Gravity;
 using UnityEngine;
 
@@ -6,7 +6,8 @@ namespace Puzzle.Editor
 {
     public static class ClearFinaleChecks
     {
-        public static void ValidateAndBuild()
+        public static void ValidateAndBuild(){Run();WalletFlightChecks.ValidateAndBuild();}
+        public static void Run()
         {
             var root=PuzzleUI.Rect("Finale check",null);root.sizeDelta=new Vector2(390,844);
             try
@@ -20,11 +21,12 @@ namespace Puzzle.Editor
                 {received++;lastArrival=time;if(received==3)stars.FinishWhenReady();});
                 for(int frame=0;frame<240;frame++)
                 {
-                    time+=.025f;stars.Tick(.025f,false);flight.Tick(.025f,false);
+                    time+=.025f;float presentationDelta=.025f*GravityPuzzleApp.ClearPresentationSpeed;stars.Tick(presentationDelta,false);flight.Tick(presentationDelta,false);
                     if(finales>0)maxScale=Mathf.Max(maxScale,stars.Star(1).localScale.x);
                 }
                 Require(notes==3&&received==3&&finales==1,"Exactly one finale per clear");
-                Require(finish-lastArrival>=.14f&&finish-lastArrival<.22f,"Short breath after last arrival");
+                Require(finish>1.24f&&finish<1.32f,"Interleaved three-star flight and finale run at 1.3x speed");
+                Require(finish-lastArrival>=.11f/GravityPuzzleApp.ClearPresentationSpeed&&finish-lastArrival<.17f/GravityPuzzleApp.ClearPresentationSpeed,"Connected finale after last arrival");
                 Require(maxScale>1.1f&&Mathf.Abs(stars.Star(1).localScale.x-1)<.001f,"Final emphasis grows then settles");
                 stars.FinishWhenReady();stars.Tick(10,false);Require(finales==1,"Repeated finish request cannot replay the sound");
                 int quickFinal=0,quickNotes=0;
@@ -39,12 +41,14 @@ namespace Puzzle.Editor
                     Require(i==0||ClearRewardAudio.Notes[i]>ClearRewardAudio.Notes[i-1],"Strictly rising reveal and collection pitches");
                     CheckClip(ClearRewardAudio.MakeClip(i));
                 }
+                var sustain=ClearRewardAudio.MakeClip(0);
+                Require(sustain.length>(WalletStarFlight.ArrivalAt(0)-CompletionStars.RevealAt(0))/GravityPuzzleApp.ClearPresentationSpeed,"Reward sound sustains until collection");
+                UnityEngine.Object.DestroyImmediate(sustain);
                 Require(ClearRewardAudio.FinalNote>ClearRewardAudio.Notes[5],"Final melody note is highest");
                 CheckClip(ClearRewardAudio.MakeFinale());
                 Debug.Log("Clear finale checks passed: rising audio, last-arrival timing, single finale, emphasis settling, fast mode and replay.");
             }
             finally{UnityEngine.Object.DestroyImmediate(root.gameObject);}
-            WalletFlightChecks.ValidateAndBuild();
         }
         private static void CheckClip(AudioClip clip)
         {

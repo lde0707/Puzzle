@@ -1,0 +1,70 @@
+PASS F0 / 3 directions
+PASS 1A / 5 directions
+PASS 1B / 6 directions
+PASS 1C / 7 directions
+PASS 1D / 7 directions
+PASS 1E / 8 directions
+PASS 2A / 5 directions
+PASS 2B / 8 directions
+PASS 2C / 9 directions
+PASS 2D / 9 directions
+PASS 2E / 9 directions
+PASS 2F / 8 directions
+PASS 3A / 10 directions
+PASS 3B / 11 directions
+PASS 3C / 4 directions
+PASS HD / 12 directions
+PASS T01 / 3 directions
+PASS T02 / 4 directions
+PASS T03 / 5 directions
+PASS T04 / 6 directions
+PASS T05 / 7 directions
+PASS T06 / 8 directions
+PASS T07 / 9 directions
+PASS T08 / 10 directions
+PASS T09 / 11 directions
+PASS T10 / 12 directions
+PASS T11 / 13 directions
+PASS T12 / 14 directions
+PASS T13 / 15 directions
+PASS T14 / 16 directions
+PASS T15 / 17 directions
+PASS T16 / 18 directions
+PASS Python/C# parity: 1600 cases
+PASS independent portal parity: 6400 cases
+PASS resize R01 / shortest 3
+PASS resize R02 / shortest 4
+PASS resize R03 / shortest 5
+PASS resize R04 / shortest 6
+PASS resize R05 / shortest 7
+PASS resize R06 / shortest 8
+PASS resize R07 / shortest 9
+PASS resize R08 / shortest 10
+PASS resize R09 / shortest 11
+PASS resize R10 / shortest 12
+PASS resize R11 / shortest 13
+PASS resize R12 / shortest 14
+PASS resize R13 / shortest 15
+PASS resize R14 / shortest 16
+PASS resize R15 / shortest 17
+PASS resize R16 / shortest 18
+PASS independent resize parity: 3200 cases; dynamic size, save, undo, reset, pause, goals, collision and legacy migration
+PASS blink B01 / stage 49 / shortest 3
+PASS blink B02 / stage 50 / shortest 4
+PASS blink B03 / stage 51 / shortest 5
+PASS blink B04 / stage 52 / shortest 6
+PASS blink B05 / stage 53 / shortest 7
+PASS blink B06 / stage 54 / shortest 8
+PASS blink B07 / stage 55 / shortest 9
+PASS blink B08 / stage 56 / shortest 10
+PASS blink B09 / stage 57 / shortest 11
+PASS blink B10 / stage 58 / shortest 12
+PASS blink B11 / stage 59 / shortest 13
+PASS blink B12 / stage 60 / shortest 14
+PASS blink B13 / stage 61 / shortest 15
+PASS blink B14 / stage 62 / shortest 16
+PASS blink B15 / stage 63 / shortest 17
+PASS blink B16 / stage 64 / shortest 18
+PASS 1920 independent blink transitions; 16 C# shortest-path searches; phase, save, undo, reset, pause, deferred occupancy and portal exits
+PASS no-op, moving Undo/Reset, overlapping pauses, frame rates, bounds, identities, two-slot save recovery
+TOTAL assertions: 8497737; failures: 0

@@ -49,7 +49,7 @@ def main():
     font=ImageFont.truetype(str(ASSETS/'Resources/GravityPuzzle/NanumGothic-Regular.ttf'),112*SCALE)
     # Plump individual letters, rounded corners and gently uneven baselines.
     # All geometry is regenerated from the licensed font, not an edited bitmap.
-    for i, (letter, angle, lift) in enumerate(zip('말랑궤도', (2,-2,1,-1), (0,-3,1,-2))):
+    for i, (letter, angle, lift) in enumerate(zip('데굴데굴', (2,-2,1,-1), (0,-3,1,-2))):
         mask=Image.new('L',(132*SCALE,156*SCALE))
         ImageDraw.Draw(mask).text((10*SCALE,8*SCALE),letter,font=font,fill=255,stroke_width=5*SCALE)
         mask=mask.filter(ImageFilter.GaussianBlur(1.25*SCALE)).point(lambda p: 255 if p>=128 else 0)
@@ -66,7 +66,7 @@ def main():
     logo.save(WEB/'mallang-orbit-logo.png')
     emblem.save(WEB/'mallang-orbit-icon.png')
     # Lightweight scalable favicon; rounded friends and the same orbit motif.
-    svg='''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="말랑궤도 세 친구 심볼">
+    svg='''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="데굴데굴 세 친구 심볼">
 <ellipse cx="80" cy="80" rx="73" ry="37" transform="rotate(-32 80 80)" fill="none" stroke="#c7b8e8" stroke-width="4"/>
 <g fill="#c7b8e8"><path d="m53 15 2 4 4 2-4 2-2 4-2-4-4-2 4-2z"/><path d="m129 121 2 3 3 2-3 2-2 3-2-3-3-2 3-2z"/></g>
 <rect x="51" y="53" width="62" height="62" rx="17" fill="#fca17d"/>

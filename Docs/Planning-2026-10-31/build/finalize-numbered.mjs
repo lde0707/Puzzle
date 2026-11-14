@@ -1,0 +1,7 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {pathToFileURL} from 'node:url';
+const W=path.resolve('..'),S='C:/Users/doun0/.codex/plugins/cache/openai-primary-runtime/presentations/26.1017.22136/skills/presentations';
+const {finalizePresentation}=await import(pathToFileURL(path.join(S,'container_tools/artifact_tool_utils.mjs')).href);
+await fs.mkdir(path.join(W,'numbered-output'),{recursive:true});
+const meta=JSON.parse(await fs.readFile('ui-meta.json','utf8'));
+const result=await finalizePresentation({workspaceDir:W,candidatePath:path.join(W,'build/ui-numbered-candidate.pptx'),finalPath:path.join(W,'numbered-output/말랑궤도 UI 기획서.pptx'),pythonExecutable:'C:/Users/doun0/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',integrityValidatorPath:path.join(S,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(S,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit',...meta.owners.flatMap(n=>['--require-native-table-slide',String(n)])],requiredNativeTableOwnerSlides:meta.owners,fontPolicy:{basis:'design',families:['Malgun Gothic','맑은 고딕']},verifyArtifactToolImport:true,receiptPath:path.join(W,'build/ui-numbered-final-validation.json')});
+console.log(JSON.stringify({path:result.finalPath,sha256:result.finalSha256,package:result.packageIntegrity.status,layout:result.presentationLayout.findingCount,import:result.firstPartyImport.passed}));

@@ -1,0 +1,2267 @@
+{
+  "timestamp": "2026-10-31T04:18:46.492226+00:00",
+  "sourceSHA256": {
+    "layouts.json": "dd43edfd902f8bf722588bc631e9f9794932da30be6f8917bc187473182d55e5",
+    "late_levels.json": "a2038703c45bbd3545194a59ac469fbef8f228995fc6d9a5e963fe1360515b6f",
+    "resize_levels.json": "3d9690ff424e748b4a0a43494ab4f10713b83872380838d94ada1e633d35cb52",
+    "blink_levels.json": "34c5c8156483d5246d79e3b4528080a4e021b196ff6078730f460af3fe72090a"
+  },
+  "method": "Exhaustive BFS through authored solution depth; fixed-size route oracle cross-check; blink searches include turn parity",
+  "limitation": "Initial-state solvability only. Human difficulty and recovery from every reachable state are not proven.",
+  "levels": [
+    {
+      "stage": 1,
+      "room": "F0",
+      "name": "F0",
+      "chapter": 0,
+      "shortest": 3,
+      "authoredLength": 3,
+      "solution": [
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 6,
+      "friends": 1,
+      "width": 9,
+      "height": 7,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 2,
+      "room": "3C",
+      "name": "3C",
+      "chapter": 0,
+      "shortest": 4,
+      "authoredLength": 4,
+      "solution": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 7,
+      "friends": 1,
+      "width": 9,
+      "height": 7,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 3,
+      "room": "1A",
+      "name": "1A",
+      "chapter": 0,
+      "shortest": 5,
+      "authoredLength": 5,
+      "solution": [
+        2,
+        1,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 13,
+      "friends": 1,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 4,
+      "room": "2A",
+      "name": "2A",
+      "chapter": 0,
+      "shortest": 5,
+      "authoredLength": 5,
+      "solution": [
+        2,
+        3,
+        2,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 14,
+      "friends": 1,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 5,
+      "room": "1B",
+      "name": "1B",
+      "chapter": 0,
+      "shortest": 6,
+      "authoredLength": 6,
+      "solution": [
+        1,
+        2,
+        3,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 27,
+      "friends": 2,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 6,
+      "room": "1D",
+      "name": "1D",
+      "chapter": 0,
+      "shortest": 7,
+      "authoredLength": 7,
+      "solution": [
+        2,
+        3,
+        2,
+        1,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 44,
+      "friends": 2,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 7,
+      "room": "1C",
+      "name": "1C",
+      "chapter": 0,
+      "shortest": 7,
+      "authoredLength": 7,
+      "solution": [
+        2,
+        1,
+        0,
+        1,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 21,
+      "friends": 2,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 8,
+      "room": "2B",
+      "name": "2B",
+      "chapter": 0,
+      "shortest": 8,
+      "authoredLength": 8,
+      "solution": [
+        1,
+        2,
+        3,
+        0,
+        3,
+        2,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 52,
+      "friends": 2,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 9,
+      "room": "1E",
+      "name": "1E",
+      "chapter": 0,
+      "shortest": 8,
+      "authoredLength": 8,
+      "solution": [
+        1,
+        2,
+        3,
+        0,
+        3,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 133,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 10,
+      "room": "2F",
+      "name": "2F",
+      "chapter": 0,
+      "shortest": 8,
+      "authoredLength": 8,
+      "solution": [
+        1,
+        2,
+        3,
+        0,
+        1,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 78,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 11,
+      "room": "2E",
+      "name": "2E",
+      "chapter": 0,
+      "shortest": 9,
+      "authoredLength": 9,
+      "solution": [
+        2,
+        1,
+        0,
+        3,
+        2,
+        1,
+        0,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 50,
+      "friends": 2,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 12,
+      "room": "2D",
+      "name": "2D",
+      "chapter": 0,
+      "shortest": 9,
+      "authoredLength": 9,
+      "solution": [
+        2,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 77,
+      "friends": 2,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 13,
+      "room": "2C",
+      "name": "2C",
+      "chapter": 0,
+      "shortest": 9,
+      "authoredLength": 9,
+      "solution": [
+        2,
+        3,
+        0,
+        1,
+        2,
+        1,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 142,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 14,
+      "room": "3A",
+      "name": "3A",
+      "chapter": 0,
+      "shortest": 10,
+      "authoredLength": 10,
+      "solution": [
+        1,
+        2,
+        3,
+        0,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 169,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 15,
+      "room": "3B",
+      "name": "3B",
+      "chapter": 0,
+      "shortest": 11,
+      "authoredLength": 11,
+      "solution": [
+        2,
+        1,
+        2,
+        3,
+        0,
+        1,
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 333,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 16,
+      "room": "HD",
+      "name": "HD",
+      "chapter": 0,
+      "shortest": 12,
+      "authoredLength": 12,
+      "solution": [
+        3,
+        2,
+        1,
+        2,
+        3,
+        0,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 137,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        2
+      ],
+      "goalSizes": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 17,
+      "room": "T01",
+      "name": "빛나는 문턱",
+      "chapter": 1,
+      "shortest": 3,
+      "authoredLength": 3,
+      "solution": [
+        3,
+        0,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 14,
+      "friends": 1,
+      "width": 13,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 18,
+      "room": "T02",
+      "name": "벽에 숨은 문",
+      "chapter": 1,
+      "shortest": 4,
+      "authoredLength": 4,
+      "solution": [
+        1,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 18,
+      "friends": 1,
+      "width": 13,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 19,
+      "room": "T03",
+      "name": "위아래 지름길",
+      "chapter": 1,
+      "shortest": 5,
+      "authoredLength": 5,
+      "solution": [
+        0,
+        3,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 18,
+      "friends": 1,
+      "width": 13,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 20,
+      "room": "T04",
+      "name": "빙글 돌아 만나",
+      "chapter": 1,
+      "shortest": 6,
+      "authoredLength": 6,
+      "solution": [
+        3,
+        0,
+        3,
+        2,
+        1,
+        2
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 15,
+      "friends": 1,
+      "width": 13,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 21,
+      "room": "T05",
+      "name": "둘이 건너는 밤",
+      "chapter": 1,
+      "shortest": 7,
+      "authoredLength": 7,
+      "solution": [
+        1,
+        1,
+        0,
+        3,
+        2,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 55,
+      "friends": 2,
+      "width": 13,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 22,
+      "room": "T06",
+      "name": "먼저 비켜 줄래",
+      "chapter": 1,
+      "shortest": 8,
+      "authoredLength": 8,
+      "solution": [
+        3,
+        2,
+        0,
+        1,
+        2,
+        3,
+        2,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 130,
+      "friends": 2,
+      "width": 14,
+      "height": 13,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 23,
+      "room": "T07",
+      "name": "두 색의 별문",
+      "chapter": 1,
+      "shortest": 9,
+      "authoredLength": 9,
+      "solution": [
+        0,
+        3,
+        2,
+        3,
+        1,
+        2,
+        1,
+        0,
+        3
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 145,
+      "friends": 2,
+      "width": 14,
+      "height": 13,
+      "portalPairs": 2,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 24,
+      "room": "T08",
+      "name": "엇갈린 출구",
+      "chapter": 1,
+      "shortest": 10,
+      "authoredLength": 10,
+      "solution": [
+        1,
+        2,
+        0,
+        3,
+        2,
+        3,
+        0,
+        1,
+        2,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 263,
+      "friends": 2,
+      "width": 14,
+      "height": 13,
+      "portalPairs": 2,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 25,
+      "room": "T09",
+      "name": "세 친구의 여행",
+      "chapter": 1,
+      "shortest": 11,
+      "authoredLength": 11,
+      "solution": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        3,
+        2,
+        2,
+        1,
+        2
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 359,
+      "friends": 3,
+      "width": 14,
+      "height": 13,
+      "portalPairs": 2,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 26,
+      "room": "T10",
+      "name": "벽 너머 무지개",
+      "chapter": 1,
+      "shortest": 12,
+      "authoredLength": 12,
+      "solution": [
+        0,
+        1,
+        2,
+        3,
+        0,
+        3,
+        0,
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      "shortestSolutionCount": 4,
+      "statesThroughAuthoredDepth": 988,
+      "friends": 3,
+      "width": 16,
+      "height": 15,
+      "portalPairs": 2,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 27,
+      "room": "T11",
+      "name": "한 박자 기다려",
+      "chapter": 1,
+      "shortest": 13,
+      "authoredLength": 13,
+      "solution": [
+        1,
+        1,
+        2,
+        1,
+        0,
+        3,
+        2,
+        3,
+        0,
+        1,
+        0,
+        3,
+        2
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 1982,
+      "friends": 3,
+      "width": 16,
+      "height": 15,
+      "portalPairs": 2,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 28,
+      "room": "T12",
+      "name": "돌아오는 길",
+      "chapter": 1,
+      "shortest": 14,
+      "authoredLength": 14,
+      "solution": [
+        1,
+        2,
+        3,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        0,
+        3,
+        2,
+        3,
+        1
+      ],
+      "shortestSolutionCount": 3,
+      "statesThroughAuthoredDepth": 2107,
+      "friends": 3,
+      "width": 16,
+      "height": 15,
+      "portalPairs": 2,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 29,
+      "room": "T13",
+      "name": "세 갈래 은하",
+      "chapter": 1,
+      "shortest": 15,
+      "authoredLength": 15,
+      "solution": [
+        0,
+        2,
+        3,
+        0,
+        1,
+        3,
+        2,
+        1,
+        0,
+        3,
+        0,
+        1,
+        2,
+        1,
+        2
+      ],
+      "shortestSolutionCount": 5,
+      "statesThroughAuthoredDepth": 1083,
+      "friends": 3,
+      "width": 16,
+      "height": 15,
+      "portalPairs": 3,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 30,
+      "room": "T14",
+      "name": "작은 순서의 차이",
+      "chapter": 1,
+      "shortest": 16,
+      "authoredLength": 16,
+      "solution": [
+        0,
+        0,
+        3,
+        2,
+        3,
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        3,
+        2,
+        3,
+        1,
+        2
+      ],
+      "shortestSolutionCount": 4,
+      "statesThroughAuthoredDepth": 2611,
+      "friends": 3,
+      "width": 18,
+      "height": 17,
+      "portalPairs": 3,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 31,
+      "room": "T15",
+      "name": "별문 교차로",
+      "chapter": 1,
+      "shortest": 17,
+      "authoredLength": 17,
+      "solution": [
+        3,
+        3,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        3,
+        3,
+        2,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 2066,
+      "friends": 3,
+      "width": 18,
+      "height": 17,
+      "portalPairs": 3,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 32,
+      "room": "T16",
+      "name": "우리의 넓은 우주",
+      "chapter": 1,
+      "shortest": 18,
+      "authoredLength": 18,
+      "solution": [
+        1,
+        0,
+        3,
+        2,
+        3,
+        0,
+        1,
+        0,
+        2,
+        3,
+        0,
+        3,
+        0,
+        2,
+        0,
+        1,
+        0,
+        2
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 3514,
+      "friends": 3,
+      "width": 18,
+      "height": 17,
+      "portalPairs": 3,
+      "resizePads": 0,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 33,
+      "room": "R01",
+      "name": "처음 만난 변환대",
+      "chapter": 2,
+      "shortest": 3,
+      "authoredLength": 3,
+      "solution": [
+        0,
+        2,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 12,
+      "friends": 1,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 1,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        2
+      ]
+    },
+    {
+      "stage": 34,
+      "room": "R02",
+      "name": "작아지는 연습",
+      "chapter": 2,
+      "shortest": 4,
+      "authoredLength": 4,
+      "solution": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 19,
+      "friends": 1,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 1,
+      "initialSizes": [
+        2
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 35,
+      "room": "R03",
+      "name": "넓은 몸 작은 길",
+      "chapter": 2,
+      "shortest": 5,
+      "authoredLength": 5,
+      "solution": [
+        0,
+        1,
+        2,
+        3,
+        2
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 14,
+      "friends": 1,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 36,
+      "room": "R04",
+      "name": "한 번 더 말랑",
+      "chapter": 2,
+      "shortest": 6,
+      "authoredLength": 6,
+      "solution": [
+        0,
+        2,
+        3,
+        2,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 23,
+      "friends": 1,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 37,
+      "room": "R05",
+      "name": "몸집을 바꿔 돌아서",
+      "chapter": 2,
+      "shortest": 7,
+      "authoredLength": 7,
+      "solution": [
+        1,
+        0,
+        3,
+        2,
+        1,
+        2,
+        3
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 24,
+      "friends": 1,
+      "width": 11,
+      "height": 10,
+      "portalPairs": 0,
+      "resizePads": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 38,
+      "room": "R06",
+      "name": "작은 문으로 쏙",
+      "chapter": 2,
+      "shortest": 8,
+      "authoredLength": 8,
+      "solution": [
+        0,
+        1,
+        2,
+        3,
+        2,
+        3,
+        2,
+        3
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 26,
+      "friends": 1,
+      "width": 11,
+      "height": 10,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 39,
+      "room": "R07",
+      "name": "커져서 멈춰요",
+      "chapter": 2,
+      "shortest": 9,
+      "authoredLength": 9,
+      "solution": [
+        0,
+        1,
+        0,
+        2,
+        3,
+        2,
+        3,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 28,
+      "friends": 1,
+      "width": 11,
+      "height": 10,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 40,
+      "room": "R08",
+      "name": "별문 너머 변신",
+      "chapter": 2,
+      "shortest": 10,
+      "authoredLength": 10,
+      "solution": [
+        0,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3,
+        3,
+        2,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 28,
+      "friends": 1,
+      "width": 11,
+      "height": 10,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 41,
+      "room": "R09",
+      "name": "둘이 다른 크기",
+      "chapter": 2,
+      "shortest": 11,
+      "authoredLength": 11,
+      "solution": [
+        0,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0,
+        3,
+        2,
+        3,
+        3
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 93,
+      "friends": 2,
+      "width": 11,
+      "height": 10,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 42,
+      "room": "R10",
+      "name": "친구가 비켜 주면",
+      "chapter": 2,
+      "shortest": 12,
+      "authoredLength": 12,
+      "solution": [
+        2,
+        3,
+        0,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 162,
+      "friends": 2,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 43,
+      "room": "R11",
+      "name": "좁은 길 양보하기",
+      "chapter": 2,
+      "shortest": 13,
+      "authoredLength": 13,
+      "solution": [
+        3,
+        0,
+        3,
+        2,
+        1,
+        0,
+        3,
+        0,
+        1,
+        2,
+        3,
+        2,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 126,
+      "friends": 2,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        2
+      ]
+    },
+    {
+      "stage": 44,
+      "room": "R12",
+      "name": "변신의 순서를 찾아",
+      "chapter": 2,
+      "shortest": 14,
+      "authoredLength": 14,
+      "solution": [
+        3,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        3,
+        2,
+        3,
+        0,
+        1,
+        2,
+        1
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 319,
+      "friends": 2,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 45,
+      "room": "R13",
+      "name": "셋이 맞추는 크기",
+      "chapter": 2,
+      "shortest": 15,
+      "authoredLength": 15,
+      "solution": [
+        2,
+        3,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        3,
+        0,
+        2,
+        3,
+        0,
+        1,
+        3
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 492,
+      "friends": 3,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 46,
+      "room": "R14",
+      "name": "별문 앞 자리 바꾸기",
+      "chapter": 2,
+      "shortest": 16,
+      "authoredLength": 16,
+      "solution": [
+        0,
+        1,
+        0,
+        3,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0,
+        3,
+        2,
+        3,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 804,
+      "friends": 3,
+      "width": 13,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 47,
+      "room": "R15",
+      "name": "크고 작은 약속",
+      "chapter": 2,
+      "shortest": 17,
+      "authoredLength": 17,
+      "solution": [
+        3,
+        0,
+        1,
+        2,
+        1,
+        3,
+        0,
+        3,
+        2,
+        1,
+        2,
+        1,
+        0,
+        3,
+        0,
+        1,
+        3
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 1066,
+      "friends": 3,
+      "width": 14,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 48,
+      "room": "R16",
+      "name": "우리 모두 꼭 맞게",
+      "chapter": 2,
+      "shortest": 18,
+      "authoredLength": 18,
+      "solution": [
+        0,
+        3,
+        2,
+        3,
+        2,
+        1,
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        3,
+        0,
+        1,
+        2,
+        3,
+        3
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 2168,
+      "friends": 3,
+      "width": 14,
+      "height": 12,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "initialSizes": [
+        1,
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "stage": 49,
+      "room": "B01",
+      "name": "처음 열린 길",
+      "chapter": 3,
+      "shortest": 3,
+      "authoredLength": 3,
+      "solution": [
+        0,
+        0,
+        2
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 21,
+      "friends": 1,
+      "width": 8,
+      "height": 8,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 50,
+      "room": "B02",
+      "name": "한 박자 기다려",
+      "chapter": 3,
+      "shortest": 4,
+      "authoredLength": 4,
+      "solution": [
+        0,
+        0,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 3,
+      "statesThroughAuthoredDepth": 17,
+      "friends": 1,
+      "width": 8,
+      "height": 8,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 2,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 51,
+      "room": "B03",
+      "name": "다시 생기는 발판",
+      "chapter": 3,
+      "shortest": 5,
+      "authoredLength": 5,
+      "solution": [
+        2,
+        3,
+        0,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 29,
+      "friends": 1,
+      "width": 8,
+      "height": 8,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 3,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 52,
+      "room": "B04",
+      "name": "멈추면 달라져요",
+      "chapter": 3,
+      "shortest": 6,
+      "authoredLength": 6,
+      "solution": [
+        2,
+        1,
+        3,
+        0,
+        2,
+        3
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 26,
+      "friends": 1,
+      "width": 8,
+      "height": 8,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 3,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 53,
+      "room": "B05",
+      "name": "번갈아 숨바꼭질",
+      "chapter": 3,
+      "shortest": 7,
+      "authoredLength": 7,
+      "solution": [
+        0,
+        2,
+        1,
+        0,
+        0,
+        1,
+        3
+      ],
+      "shortestSolutionCount": 12,
+      "statesThroughAuthoredDepth": 32,
+      "friends": 1,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 4,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 54,
+      "room": "B06",
+      "name": "두 색의 약속",
+      "chapter": 3,
+      "shortest": 8,
+      "authoredLength": 8,
+      "solution": [
+        0,
+        2,
+        1,
+        1,
+        3,
+        0,
+        2,
+        0
+      ],
+      "shortestSolutionCount": 12,
+      "statesThroughAuthoredDepth": 54,
+      "friends": 1,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 4,
+      "initialSizes": [
+        1
+      ],
+      "goalSizes": [
+        1
+      ]
+    },
+    {
+      "stage": 55,
+      "room": "B07",
+      "name": "친구와 한 박자",
+      "chapter": 3,
+      "shortest": 9,
+      "authoredLength": 9,
+      "solution": [
+        2,
+        3,
+        0,
+        0,
+        2,
+        3,
+        0,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 417,
+      "friends": 2,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 4,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 56,
+      "room": "B08",
+      "name": "먼저 열어 줄게",
+      "chapter": 3,
+      "shortest": 10,
+      "authoredLength": 10,
+      "solution": [
+        0,
+        3,
+        2,
+        1,
+        3,
+        2,
+        0,
+        3,
+        1,
+        0
+      ],
+      "shortestSolutionCount": 1,
+      "statesThroughAuthoredDepth": 305,
+      "friends": 2,
+      "width": 9,
+      "height": 9,
+      "portalPairs": 0,
+      "resizePads": 0,
+      "blinkBlocks": 4,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 57,
+      "room": "B09",
+      "name": "별문 앞의 기다림",
+      "chapter": 3,
+      "shortest": 11,
+      "authoredLength": 11,
+      "solution": [
+        0,
+        1,
+        1,
+        2,
+        0,
+        3,
+        1,
+        0,
+        2,
+        3,
+        1
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 475,
+      "friends": 2,
+      "width": 10,
+      "height": 9,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 58,
+      "room": "B10",
+      "name": "건너편도 한 박자",
+      "chapter": 3,
+      "shortest": 12,
+      "authoredLength": 12,
+      "solution": [
+        0,
+        3,
+        2,
+        3,
+        3,
+        1,
+        0,
+        0,
+        2,
+        1,
+        1,
+        3
+      ],
+      "shortestSolutionCount": 4,
+      "statesThroughAuthoredDepth": 420,
+      "friends": 2,
+      "width": 10,
+      "height": 9,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 59,
+      "room": "B11",
+      "name": "둘이 여는 길",
+      "chapter": 3,
+      "shortest": 13,
+      "authoredLength": 13,
+      "solution": [
+        0,
+        0,
+        1,
+        2,
+        1,
+        0,
+        3,
+        2,
+        1,
+        1,
+        2,
+        0,
+        1
+      ],
+      "shortestSolutionCount": 2,
+      "statesThroughAuthoredDepth": 430,
+      "friends": 2,
+      "width": 10,
+      "height": 9,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 60,
+      "room": "B12",
+      "name": "돌아오는 타이밍",
+      "chapter": 3,
+      "shortest": 14,
+      "authoredLength": 14,
+      "solution": [
+        1,
+        2,
+        3,
+        0,
+        1,
+        3,
+        1,
+        2,
+        0,
+        1,
+        1,
+        3,
+        0,
+        0
+      ],
+      "shortestSolutionCount": 8,
+      "statesThroughAuthoredDepth": 775,
+      "friends": 2,
+      "width": 10,
+      "height": 9,
+      "portalPairs": 1,
+      "resizePads": 0,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 61,
+      "room": "B13",
+      "name": "작아질 때 열리는 길",
+      "chapter": 3,
+      "shortest": 15,
+      "authoredLength": 15,
+      "solution": [
+        0,
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        2,
+        1,
+        3,
+        3,
+        1,
+        1,
+        1,
+        3
+      ],
+      "shortestSolutionCount": 72,
+      "statesThroughAuthoredDepth": 1154,
+      "friends": 2,
+      "width": 11,
+      "height": 10,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        1,
+        1
+      ]
+    },
+    {
+      "stage": 62,
+      "room": "B14",
+      "name": "몸집과 박자를 맞춰",
+      "chapter": 3,
+      "shortest": 16,
+      "authoredLength": 16,
+      "solution": [
+        0,
+        3,
+        0,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        1,
+        0,
+        0,
+        3,
+        2,
+        3,
+        0
+      ],
+      "shortestSolutionCount": 3,
+      "statesThroughAuthoredDepth": 1553,
+      "friends": 2,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        2,
+        2
+      ]
+    },
+    {
+      "stage": 63,
+      "room": "B15",
+      "name": "함께 건너는 길",
+      "chapter": 3,
+      "shortest": 17,
+      "authoredLength": 17,
+      "solution": [
+        3,
+        0,
+        3,
+        3,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        1,
+        1,
+        3,
+        3,
+        2,
+        0,
+        1
+      ],
+      "shortestSolutionCount": 30,
+      "statesThroughAuthoredDepth": 1769,
+      "friends": 2,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        2,
+        2
+      ]
+    },
+    {
+      "stage": 64,
+      "room": "B16",
+      "name": "모두 맞닿는 순간",
+      "chapter": 3,
+      "shortest": 18,
+      "authoredLength": 18,
+      "solution": [
+        0,
+        3,
+        2,
+        1,
+        3,
+        0,
+        2,
+        1,
+        0,
+        3,
+        2,
+        0,
+        3,
+        0,
+        2,
+        0,
+        3,
+        3
+      ],
+      "shortestSolutionCount": 42,
+      "statesThroughAuthoredDepth": 2202,
+      "friends": 2,
+      "width": 12,
+      "height": 11,
+      "portalPairs": 1,
+      "resizePads": 2,
+      "blinkBlocks": 5,
+      "initialSizes": [
+        1,
+        1
+      ],
+      "goalSizes": [
+        2,
+        1
+      ]
+    }
+  ],
+  "shortestDrops": [
+    {
+      "previous": 16,
+      "stage": 17,
+      "before": 12,
+      "after": 3
+    },
+    {
+      "previous": 32,
+      "stage": 33,
+      "before": 18,
+      "after": 3
+    },
+    {
+      "previous": 48,
+      "stage": 49,
+      "before": 18,
+      "after": 3
+    }
+  ],
+  "allAuthoredRoutesShortest": true
+}

@@ -37,10 +37,12 @@ namespace Puzzle.Gravity
         private int direction;
         public BoardView(RectTransform root) { this.root=root; }
         private int selectedSkin;
+        private SkinTravelEffects skinEffects;
         private readonly List<Image> goalColors=new List<Image>();
         public void ApplySkin(int id)
         {
             selectedSkin=id;
+            if(skinEffects)skinEffects.Clear();
             foreach(var friend in friends){friend.arrivalAge=10;friend.skin.Motion(false,10,Vector2.zero);friend.skin.skin=id;friend.skin.SetVerticesDirty();}
             for(int i=0;i<goalColors.Count;i++)goalColors[i].color=SkinDecoration.ColorFor(id,i%3);
         }
@@ -48,7 +50,7 @@ namespace Puzzle.Gravity
         { r.anchorMin=new Vector2(x,y);r.anchorMax=new Vector2(right,top);r.offsetMin=r.offsetMax=Vector2.zero; }
         public void Build(PuzzleDefinition definition)
         {
-            foreach(Transform child in root) { child.gameObject.SetActive(false);Object.Destroy(child.gameObject); }
+            for(int i=root.childCount-1;i>=0;i--) { var child=root.GetChild(i);child.gameObject.SetActive(false);PuzzleUI.DisposeView(child.gameObject); }
             blinkVisuals.Clear();friends.Clear();goalColors.Clear();gates.Clear();resizePads.Clear();links.Clear();slots.Clear();slotCells.Clear();slotSizes.Clear();level=definition;clock=0;celebration=-1;generation++;selectedGate=-1;previewTime=0;lastSession=null;
             var shadow=PuzzleUI.Panel("Floating tray shadow",root,new Color(.28f,.18f,.42f,.18f));PuzzleUI.Fill(shadow.rectTransform,-11);shadow.rectTransform.anchoredPosition=new Vector2(0,-6);
             var rim=PuzzleUI.Panel("Blackberry rim",root,PuzzleUI.Ink);PuzzleUI.Fill(rim.rectTransform,-8);
@@ -121,6 +123,10 @@ namespace Puzzle.Gravity
                 Stone("Moon pebble",c,1);
             }
             BuildBlinkBlocks();
+            // Foreground motifs stay visible over the jelly body; the board still clips them.
+            var effectsClip=PuzzleUI.Rect("Skin effect boundary",root);PuzzleUI.Fill(effectsClip);effectsClip.gameObject.AddComponent<RectMask2D>();
+            var effectsRoot=PuzzleUI.Rect("Skin trails and arrivals",effectsClip);PuzzleUI.Fill(effectsRoot);
+            skinEffects=effectsRoot.gameObject.AddComponent<SkinTravelEffects>();skinEffects.raycastTarget=false;
             for(int i=0;i<level.cargo.Length;i++)
             {
                 var actor=new Friend { root=PuzzleUI.Rect("Friend "+(i+1),root) };friends.Add(actor);
@@ -145,9 +151,25 @@ namespace Puzzle.Gravity
         public void Layout(float availableWidth,float availableHeight,float centerX,float centerY)
         {
             if(level==null)return;
+            if(skinEffects)skinEffects.Clear();
             cell=Mathf.Min(availableWidth/level.width,availableHeight/level.height);
             PuzzleUI.Box(root,centerX-level.width*cell/2,centerY-level.height*cell/2,level.width*cell,level.height*cell);
             for(int i=0;i<slots.Count;i++)PuzzleUI.Box(slots[i],slotCells[i].x*cell+1,slotCells[i].y*cell+1,slotSizes[i]*cell-2,slotSizes[i]*cell-2);
+        }
+        public bool InspectAt(Vector2 uv)
+        {
+            if(level==null||lastSession==null||!lastSession.Ready)return false;
+            var p=new Vector2(uv.x*level.width,uv.y*level.height);
+            if(level.HasPortals)for(int i=0;i<level.portals.Length;i++)for(int side=0;side<2;side++)
+            {
+                var portal=level.portals[i];var origin=portal.Origin(side);
+                if(new Rect(origin.x,origin.y,portal.size,portal.size).Contains(p))
+                {selectedGate=i*2+side;previewTime=4;return true;}
+            }
+            if(level.HasResizers)foreach(var pad in level.resizers)
+                if(new Rect(pad.x,pad.y,2,2).Contains(p))
+                {OnHint?.Invoke(pad.targetSize==2?"확대대: 왼쪽 아래에 멈추면 2×2로 커져요.":"축소대: 왼쪽 아래에 멈추면 1×1로 작아져요.");return true;}
+            return false;
         }
         public void BeginTilt(PuzzleSession session)
         {
@@ -161,6 +183,7 @@ namespace Puzzle.Gravity
         public void CancelMotion()
         {
             celebration=-1;selectedGate=-1;previewTime=0;
+            if(skinEffects)skinEffects.Clear();
             foreach(var b in blinkVisuals)b.initialized=false;
             foreach(var f in friends){f.travelling=false;f.impact=10;f.arrivalAge=10;f.motionInitialized=false;f.skin.Motion(false,10,Vector2.zero);}
         }
@@ -181,6 +204,7 @@ namespace Puzzle.Gravity
         public void Render(PuzzleSession session,float delta=0,bool reduced=false)
         {
             float dt=session.Paused?0:delta;clock+=dt;if(celebration>=0)celebration+=dt;
+            if(skinEffects)skinEffects.Tick(dt,reduced);
             RenderBlinkBlocks(session,dt,reduced);
             lastSession=session;previewTime=Mathf.Max(0,previewTime-dt);if(previewTime==0)selectedGate=-1;
             foreach(var pad in resizePads)
@@ -247,7 +271,10 @@ namespace Puzzle.Gravity
                 f.arrivalAge+=dt;
                 if(!session.Moving)
                 {
-                    if(f.motionInitialized&&home&&!f.atHome)f.arrivalAge=0;
+                    if(f.motionInitialized&&home&&!f.atHome)
+                    {
+                        f.arrivalAge=0;
+                    }
                     f.atHome=home;
                 }
                 if(reduced)f.arrivalAge=10;
@@ -268,11 +295,18 @@ namespace Puzzle.Gravity
                     scale=Vector2.Scale(scale,portalScale);f.body.anchoredPosition=offset*cell*size;
                 }
                 f.body.localScale=new Vector3(scale.x,scale.y,1);
+                // Use the rendered body's centre, including portal offsets and resize interpolation.
+                var effectRect=skinEffects.rectTransform;
+                var effectCenter=(Vector2)effectRect.InverseTransformPoint(f.body.TransformPoint(f.body.rect.center))-effectRect.rect.min;
+                float effectExtent=size*cell*Mathf.Max(scale.x,scale.y);
+                if(f.arrivalAge==0&&!reduced&&dt>0)skinEffects.Arrive(selectedSkin,i%3,effectCenter,effectExtent);
+                skinEffects.Trail(i,selectedSkin,i%3,effectCenter,effectExtent,sliding,dt,reduced);
                 var axis=TiltSimulator.Axes[direction];
                 f.skin.Mood(home,!reduced&&f.travelling&&!session.InPortalPhase?new Vector2(axis.x,axis.y):Vector2.zero);
                 Color color=SkinDecoration.ColorFor(selectedSkin,i%3);float pulse=!reduced&&f.impact<.42f?1-f.impact/.42f:0;
                 f.halo.localScale=Vector3.one*(1+.24f*(1-pulse));f.ring.color=new Color(color.r,color.g,color.b,pulse*.65f);
             }
+            skinEffects.transform.parent.SetAsLastSibling();
         }
     }
 }

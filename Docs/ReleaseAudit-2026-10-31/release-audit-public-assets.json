@@ -1,0 +1,62 @@
+[
+  {
+    "path": "",
+    "status": 200,
+    "bytes": 3284,
+    "ttfb": 2.553,
+    "seconds": 2.554,
+    "matchesLocal": false,
+    "contentType": "text/html",
+    "cache": "public, max-age=0, must-revalidate"
+  },
+  {
+    "path": "game-assets.json",
+    "status": 200,
+    "bytes": 500,
+    "ttfb": 1.844,
+    "seconds": 1.845,
+    "matchesLocal": true,
+    "contentType": "application/json",
+    "cache": "public, max-age=0, must-revalidate"
+  },
+  {
+    "path": "community.js",
+    "status": 200,
+    "bytes": 15157,
+    "ttfb": 0.146,
+    "seconds": 0.218,
+    "matchesLocal": true,
+    "contentType": "text/javascript",
+    "cache": "public, max-age=0, must-revalidate"
+  },
+  {
+    "path": "game-loader.js",
+    "status": 200,
+    "bytes": 3562,
+    "ttfb": 0.381,
+    "seconds": 0.385,
+    "matchesLocal": true,
+    "contentType": "text/javascript",
+    "cache": "public, max-age=0, must-revalidate"
+  },
+  {
+    "path": "Build/iPhoneWebTest.data.gz?v=c436347cb0b2b400",
+    "status": 200,
+    "bytes": 19509567,
+    "ttfb": 0.418,
+    "seconds": 1.779,
+    "matchesLocal": true,
+    "contentType": "application/octet-stream",
+    "cache": "public, max-age=0, must-revalidate"
+  },
+  {
+    "path": "Build/iPhoneWebTest.wasm.gz?v=d10df5de4a776d51",
+    "status": 200,
+    "bytes": 10147087,
+    "ttfb": 0.135,
+    "seconds": 0.614,
+    "matchesLocal": true,
+    "contentType": "application/wasm",
+    "cache": "public, max-age=0, must-revalidate"
+  }
+]
