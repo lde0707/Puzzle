@@ -3,7 +3,7 @@
 <!-- WINDOWS-RELEASE-START -->
 ## Windows에서 바로 플레이
 
-**[데굴데굴 퍼즐 · Windows 실행 파일 다운로드](https://github.com/lde0707/Puzzle/releases/tag/portfolio-windows-2026-11-14)**
+**[데굴데굴 퍼즐 · Windows 실행 파일 다운로드](https://github.com/lde0707/portfolio-game-builds/releases/tag/deguldegul-2026-11-14)**
 
 방향 입력으로 친구들을 함께 움직여 같은 색 목표에 도착시키는 퍼즐 게임.
 
