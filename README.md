@@ -4,9 +4,13 @@
 
 1인 개발 · itch.io 공개 · 중력 퍼즐 · Unity 6000.3.10f1 · C#
 
-[Windows 실행 파일](https://github.com/lde0707/portfolio-game-builds/releases/tag/deguldegul-2026-11-14) · [QA 엑셀](https://leedoeon.vercel.app/qa/reports/degul-degul.xlsx) · [QA 포트폴리오](https://leedoeon.vercel.app/qa/index.html)
+[Windows 실행 파일 · 이전 UI](https://github.com/lde0707/portfolio-game-builds/releases/tag/deguldegul-2026-11-14) · [QA 엑셀](https://leedoeon.vercel.app/qa/reports/degul-degul.xlsx) · [QA 포트폴리오](https://leedoeon.vercel.app/qa/index.html)
 
 <img src="Portfolio/gameplay.webp" alt="데굴데굴 퍼즐 실제 게임 화면" width="900">
+
+[최신 UI·맵 플레이 영상 보기 · MP4](https://leedoeon.vercel.app/assets/gameplay/degul-20261116/play-flow.mp4)
+
+홈·단계 선택·맵·완료·스킨 뽑기 UI를 개편했습니다. 위 화면과 영상은 최신 WebGL 기준이며, Windows 다운로드는 개편 전 UI 빌드입니다.
 
 ## 내가 맡은 역할
 
